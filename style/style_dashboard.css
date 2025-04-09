@@ -6,7 +6,49 @@
     display: flex;
 }
 
-.navbar img{
-    width: 20%;
-    padding: 3%;
+.logo img{
+    width: 50%;
+    padding: 10%;
+}
+
+.menu_dashboard img{
+    width: 60%;
+    margin-left: 40%;
+    margin-top: 2%;
+    padding: 5%;
+}
+
+.frase_introdutoria{
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5%;
+    text-size-adjust: 250%;
+}
+
+.frase_introdutoria img{
+    width: 50%;
+}
+
+.login{
+    background-color: #187f4c;
+    color: #dddfe3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    border-radius: 20%;
+    padding: 5%;
+    margin: 20px;
+    height: 300px;
+}
+
+#texto_login{
+    margin-left: 10px;
+}
+
+#usuario_login{
+    margin: 5px;
+    font-size: 30px;
+    color: #94a0b7;
+    background-color: #dddfe3;
+    background-size: 100px;
+    border-radius: 10px;
 }
