@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+}
+.navbar{
+    background-color: black;
+    display: flex;
+}
+
+.navbar img{
+    width: 20%;
+    padding: 3%;
+}
