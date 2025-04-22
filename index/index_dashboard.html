@@ -1,10 +1,13 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
     <link rel="stylesheet" href="../style/style_dashboard.css">
+    <script src="../script/script_dashboard.js"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -22,8 +25,18 @@
         </div>
         <div class="login">
             <strong id="texto_login">Fazer Login:</strong>
-            <p id="usuario_login">Usuário</p>
+            <input type="text" name="usuario_login" id="usuario_login" placeholder="Usuário">
+            <div class="senha">
+                <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho"
+                id="olho">
+                <input type="password" id="senha_login" placeholder="Senha">
+            </div>
+            <button onclick="enviarDados()">Entrar</button>
+            <a href="recuperar_senha.html" id="esqueceu_senha">Esqueceu a senha?</a>
         </div>
     </main>
+    <footer>
+    </footer>
 </body>
+
 </html>
