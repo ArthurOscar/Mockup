@@ -5,20 +5,21 @@ function enviarDados() {
     if (usuario === '') {
         alert('Insira seu usuário')
         validacao_login = false
-    } else if (senha === '') {
+    } if (senha === '') {
         alert('Insira sua senha')
         validacao_login = false
     }
 
-    document.getElementById('olho').addEventListener('mousedown', function () {
-        document.getElementById('pass').type = 'text';
+    document.getElementById('olho').addEventListener('touchstart', function () {
+        document.getElementById('senha_login').type = 'text';
     });
 
     document.getElementById('olho').addEventListener('mouseup', function () {
-        document.getElementById('pass').type = 'password';
+        document.getElementById('senha_login').type = 'password';
     });
 
-    if (validacao_login = true) {
+    if (validacao_login === true) {
         console.log('Validação feita')
+        window.location.href='https://vale.com/pt/trem-de-passageiros'
     }
 }
