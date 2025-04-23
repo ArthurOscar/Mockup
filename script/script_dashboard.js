@@ -1,3 +1,25 @@
+function togglePasswordVisibility() {
+    let senha = document.getElementById("senha_login");
+    if (senha.type === "password") {
+      senha.type = "text";
+    } else {
+      senha.type = "password";
+    }
+}
+
+let menu_botao = document.querySelector('#menu_botao')
+let imagem_menu = document.querySelector('#imagem_menu')
+
+function trocar_menu(){
+    if(imagem_menu.scroll.match('off')){
+        imagem_menu.src = '../assects/menu_dashboard.png'
+        imagem_menu2.src = '../assects/menu_dashboard2.png'
+    } else {
+        imagem_menu.src = '../assects/menu_dashboard.png'
+        imagem_menu2.src = '../assects/menu_dashboard2.png'
+    }
+}
+
 function enviarDados() {
     let validacao_login = true
     let usuario = document.getElementById('usuario_login').value
@@ -10,14 +32,7 @@ function enviarDados() {
         validacao_login = false
     }
 
-    document.getElementById('olho').addEventListener('touchstart', function () {
-        document.getElementById('senha_login').type = 'text';
-    });
-
-    document.getElementById('olho').addEventListener('mouseup', function () {
-        document.getElementById('senha_login').type = 'password';
-    });
-
+    
     if (validacao_login === true) {
         console.log('Validação feita')
         window.location.href='https://vale.com/pt/trem-de-passageiros'

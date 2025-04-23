@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="../style/style_dashboard.css">
+    <script src="../script/script_dashboard.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assects/Logo_dashboard.png" alt="">
+        </div>
+        <div class="menu_dashboard">
+            <button id="menu_botao" onclick="trocar_menu()"><img src="../assects/menu_dashboard.png" alt="" id="imagem_menu"></button>
+        </div>
+    </nav>
+    <main>
+        <div class="frase_introdutoria">
+            <img src="../assects/Imagem_dashboard.png" alt="">
+            <strong>Fazendo das ródovias
+                em vias da vida.</strong>
+        </div>
+        <div class="login">
+            <strong id="texto_login">Fazer Login:</strong><br>
+            <input type="text" name="usuario_login" id="usuario_login" placeholder="Usuário">
+            <div class="senha">
+                <button id="olho" onclick="togglePasswordVisibility()"><img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"></button>
+                <input type="password" id="senha_login" placeholder="Senha">
+            </div>
+            <button onclick="enviarDados()" id="enviarDados">Entrar</button>
+            <a href="recuperar_senha.html" id="esqueceu_senha">Esqueceu a senha?</a>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </main>
+    <footer>
+        <br>
+        <div class="footer">
+            <h4>Direitos reservados a TremVida©, 2025</h4>
+        </div>
+    </footer>
+</body>
+
+</html>
