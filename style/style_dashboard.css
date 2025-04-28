@@ -11,26 +11,13 @@ body{
     display: flex;
 }
 
-#menu_botao{
-    background-color: black;
-    border-style: none;
-    width: 100%;
-}
-
 .logo img {
-    width: 50%;
-    padding: 10%;
+    width: 30%;
+    padding: 5%;
 }
 
 main{
     background-color: white;
-}
-
-.menu_dashboard img {
-    width: 60%;
-    margin-left: 40%;
-    margin-top: 2%;
-    padding: 5%;
 }
 
 .frase_introdutoria {
@@ -126,4 +113,41 @@ main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: white;
+}
+
+.menu_lateral {
+    position: fixed;
+    top: 0;
+    right: -50%; 
+    width: 50%;
+    height: 100%;
+    background-color: #187f4c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 1000; 
+}
+
+.menu_lateral a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 30px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu_lateral.show {
+    right: 0;
+}
+
+#imagem_menu {
+    width: 30%;
+    margin-left: 50%;
+    position: fixed;
+    top: 20px;
+    right: 5px;
+    z-index: 2000;
+    cursor: pointer;
 }

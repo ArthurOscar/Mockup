@@ -7,17 +7,26 @@ function togglePasswordVisibility() {
     }
 }
 
-let menu_botao = document.querySelector('#menu_botao')
-let imagem_menu = document.querySelector('#imagem_menu')
+function reload(){
+    location.reload()
+}
+
+var imgMenu1 = "../assects/menu_dashboard.png"
+var imgMenu2 = "../assects/menu_dashboard2.png"
+var menuAberto = false;
 
 function trocar_menu(){
-    if(imagem_menu.scroll.match('off')){
-        imagem_menu.src = '../assects/menu_dashboard.png'
-        imagem_menu2.src = '../assects/menu_dashboard2.png'
+    document.getElementById('imagem_menu').src = imgMenu2;
+    let aux = imgMenu2;
+    imgMenu2 = imgMenu1;
+    imgMenu1 = aux;
+    let menu = document.getElementById('menu_lateral');
+    if (!menuAberto) {
+        menu.classList.add('show');
     } else {
-        imagem_menu.src = '../assects/menu_dashboard.png'
-        imagem_menu2.src = '../assects/menu_dashboard2.png'
+        menu.classList.remove('show');
     }
+    menuAberto = !menuAberto;
 }
 
 function enviarDados() {

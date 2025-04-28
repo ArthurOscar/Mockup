@@ -11,12 +11,19 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../assects/Logo_dashboard.png" alt="">
+            <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
         <div class="menu_dashboard">
-            <button id="menu_botao" onclick="trocar_menu()"><img src="../assects/menu_dashboard.png" alt="" id="imagem_menu"></button>
+            <img  id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
         </div>
     </nav>
+    <div id="menu_lateral" class="menu_lateral">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 5</a>
+    </div>
     <main>
         <div class="frase_introdutoria">
             <img src="../assects/Imagem_dashboard.png" alt="">
