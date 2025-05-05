@@ -23,8 +23,12 @@ function trocar_menu(){
     let menu = document.getElementById('menu_lateral');
     if (!menuAberto) {
         menu.classList.add('show');
+        document.getElementById('imagem_menu').style.width = '70px'
+        document.getElementById('imagem_menu').style.marginRight = '30px'
     } else {
         menu.classList.remove('show');
+        document.getElementById('imagem_menu').style.width = '130px'
+        document.getElementById('imagem_menu').style.marginRight = '0px'
     }
     menuAberto = !menuAberto;
 }

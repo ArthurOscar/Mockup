@@ -3,8 +3,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de rotas</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
 </head>
 <body>
-    <h>em andamento</h>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assects/Logo_dashboard.png" onclick="reload()">
+        </div>
+        <div class="menu_dashboard">
+            <img id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
+        </div>
+    </nav>
+    <div id="menu_lateral" class="menu_lateral">
+        <div id="menu_links">
+            <a href="../public/index_gestaoderotas.html">Rotas</a>
+            <a href="../public/index_mapa.html">Mapa</a>
+            <a href="../public/index_manutencao.html">Manutenção</a>
+            <a href="../public/index_relatorios.html">Relatórios</a>
+            <a href="../public/index_alertas.html">Alertas</a>
+        </div>
+    </div>
+    <main>
+        <div id="saudacao">
+            <p>Olá, RICARDO!</p>
+            <div id="pesquisar_completo">
+                <input type="text" id="pesquisar_rota" maxlength="4" placeholder="PESQUISAR ROTAS">
+                <input type="submit" id="buscar_botao" value="Buscar">
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div id="ferrovias">
+            <div id="ferrovia_sul">
+                <img src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia Sul</p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

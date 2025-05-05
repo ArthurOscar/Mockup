@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
-    <link rel="stylesheet" href="../style/style_dashboard.css">
-    <script src="../script/script_dashboard.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
 </head>
 
 <body>
@@ -14,33 +14,32 @@
             <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
         <div class="menu_dashboard">
-            <img  id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
+            <img id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
         </div>
     </nav>
     <div id="menu_lateral" class="menu_lateral">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
-        <a href="#">Link 5</a>
+        <div id="menu_links">
+            <a href="../public/index_gestaoderotas.html">Rotas</a>
+            <a href="../public/index_mapa.html">Mapa</a>
+        </div>
     </div>
     <main>
         <div class="frase_introdutoria">
             <img src="../assects/Imagem_dashboard.png" alt="">
-            <strong>Fazendo das ródovias
+            <strong id="frase_introdutoriaText">Fazendo das ródovias
                 em vias da vida.</strong>
         </div>
         <div class="login">
             <strong id="texto_login">Fazer Login:</strong><br>
             <input type="text" name="usuario_login" id="usuario_login" placeholder="Usuário">
             <div class="senha">
-                <button id="olho" onclick="togglePasswordVisibility()"><img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"></button>
+                <button id="olho" onclick="togglePasswordVisibility()"><img
+                        src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"></button>
                 <input type="password" id="senha_login" placeholder="Senha">
             </div>
             <button onclick="enviarDados()" id="enviarDados">Entrar</button>
             <a href="recuperar_senha.html" id="esqueceu_senha">Esqueceu a senha?</a>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br>
     </main>
     <footer>
         <br>
