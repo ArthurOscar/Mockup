@@ -49,6 +49,13 @@ main{
     align-content: center;
 }
 
+.login ::-webkit-input-placeholder {
+    color: #94a0b7;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 3%;
+ }
+
 #texto_login {
     margin-left: 10px;
 }
@@ -204,7 +211,7 @@ footer{
 }
 
 
-::-webkit-input-placeholder {
+#pesquisar_completo ::-webkit-input-placeholder {
     color: #dddfe3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -225,8 +232,116 @@ footer{
  #ferrovia_sul {
     margin-left: 7%;
     display: flex;
+    align-items: center;
+    gap: 5px;
  }
 
  #ferrovia_sul img{
     width: 15%;
+ }
+
+ #ferrovia_sul p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: 30px;
+ }
+
+ #ferrovia_norte {
+    margin-left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ }
+
+ #ferrovia_norte img{
+    width: 15%;
+ }
+
+ #ferrovia_norte p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: 30px;
+ }
+
+ #ferrovia_centro {
+    margin-left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ }
+
+ #ferrovia_centro img{
+    width: 15%;
+ }
+
+ #ferrovia_centro p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: 30px;
+ }
+
+ #ferrovia_leste {
+    margin-left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ }
+
+ #ferrovia_leste img{
+    width: 15%;
+ }
+
+ #ferrovia_leste p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: 30px;
+ }
+
+ #ferrovia_oeste {
+    margin-left: 7%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+ }
+
+ #ferrovia_oeste img{
+    width: 15%;
+ }
+
+ #ferrovia_oeste p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    font-size: 30px;
+ }
+
+#menu_rotas{
+    margin-left: 8%;
+}
+
+#rota{
+    align-items: center;
+    gap: 5px;
+    display: flex;
+    margin-top: 5px;
+}
+
+#rota_texto{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: underline;
+ }
+
+ #numero, #numero2, #numero3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
  }
