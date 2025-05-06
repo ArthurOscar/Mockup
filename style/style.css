@@ -234,6 +234,7 @@ footer{
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
  }
 
  #ferrovia_sul img{
