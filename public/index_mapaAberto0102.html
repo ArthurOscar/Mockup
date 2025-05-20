@@ -1,11 +1,13 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa</title>
+    <title>Mapa Rota</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -25,12 +27,20 @@
         </div>
     </div>
     <main>
+        <div id="informacaoRota">
+            <p id="textRota">Rota</p>
+            <p id="numeroRota">0102</p>
+        </div>
+        <div id="horarioRota">
+            <p id="textHorario">Horário de partida: 8:55</p>
+            <p id="textDisponibilidade">Disponibilidade: Seg a Dom</p>
+        </div>
         <div class="mapa_icaro">
-            <img id="mapa" class="mapa" src="../assects/Mapa.PNG" alt="">
+            <img id="mapa" class="mapa" src="../assects/mapa0102.png" alt="">
         </div>
         <hr>
         <div id="ferrovias">
-            <div id="ferrovia_sul" onclick="ferroviaSul(); mapaSul()">
+            <div id="ferrovia_sul" onclick="ferroviaSul()">
                 <img id="seta_sul" src="../assects/seta_ferrovia.png" alt="">
                 <p>Ferrovia Sul</p>
             </div>

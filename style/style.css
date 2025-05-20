@@ -323,11 +323,12 @@ footer{
     margin-left: 8%;
 }
 
-#rota{
+.rota{
     align-items: center;
     gap: 5px;
     display: flex;
     margin-top: 5px;
+    cursor: pointer;;
 }
 
 #rota_texto{
@@ -350,4 +351,48 @@ footer{
  /* Mapa */
  .mapa_icaro img {
     width: 100%;
+}
+
+/*Mapa 0101*/
+#informacaoRota{
+    display: flex;
+    margin: 1rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+#textRota{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+#numeroRota{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 0.8rem;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+}
+
+#horarioRota{
+    display: flex;
+    margin: 1rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+#textHorario{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    max-width: 50%;
+}
+
+#textDisponibilidade{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    max-width: 45%;
 }

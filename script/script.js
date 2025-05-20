@@ -94,10 +94,21 @@ let mapaAberto = false
 function mapaSul() {
     let mapa_sul = document.querySelector('.mapa')
     let mapa = document.getElementById('mapa')
-    if(!mapaAberto){
+    if (!mapaAberto) {
         mapa.src = imgMapa2
     } else {
         mapa.src = imgMapa1
     }
     mapaAberto = !mapaAberto
+}
+
+function redirecionarMapa(elemento) {
+    let valorRota = elemento.getAttribute('data-valor')
+    if (valorRota = '0101'){
+        window.location.href = '../public/index_mapaAberto0101.html'
+    } if (valorRota = '0102'){
+        window.location.href = '../public/index_mapaAberto0102.html'
+    } if (valorRota = '0103'){
+        window.location.href = '../public/index_mapaAberto0103.html'
+    }
 }
