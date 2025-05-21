@@ -396,3 +396,17 @@ footer{
     font-size: 1rem;
     max-width: 45%;
 }
+
+/*Alertas*/
+.alertas{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 7%;
+    margin-left: 7%;
+    font-size: 1.8rem;
+}
+
+.filtros {
+    width: 15px;
+}

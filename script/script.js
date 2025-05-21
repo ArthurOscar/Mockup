@@ -102,13 +102,14 @@ function mapaSul() {
     mapaAberto = !mapaAberto
 }
 
-function redirecionarMapa(elemento) {
-    let valorRota = elemento.getAttribute('data-valor')
-    if (valorRota = '0101'){
+function redirecionarMapa() {
+    let numberRota = document.querySelector('.rota').getAttribute('value')
+    console.log(numberRota)
+    if (numberRota === '0101'){
         window.location.href = '../public/index_mapaAberto0101.html'
-    } if (valorRota = '0102'){
+    } if (numberRota === '0102'){
         window.location.href = '../public/index_mapaAberto0102.html'
-    } if (valorRota = '0103'){
+    } if (numberRota === '0103'){
         window.location.href = '../public/index_mapaAberto0103.html'
     }
 }
