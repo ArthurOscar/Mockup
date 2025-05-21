@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de rotas</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assects/Logo_dashboard.png" onclick="reload()">
+        </div>
+        <div class="menu_dashboard">
+            <img id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
+        </div>
+    </nav>
+    <div id="menu_lateral" class="menu_lateral">
+        <div id="menu_links">
+            <a href="../public/index_gestaoderotas.html">Rotas</a>
+            <a href="../public/index_mapa.html">Mapa</a>
+            <a href="../public/index_manutencao.html">Manutenção</a>
+            <a href="../public/index_relatorios.html">Relatórios</a>
+            <a href="../public/index_alertas.html">Alertas</a>
+        </div>
+    </div>
+    <main>
+        <div id="saudacao">
+            <div id="pesquisar_completo">
+                <input type="text" id="pesquisar_rota" maxlength="4" placeholder="PESQUISAR ROTAS">
+                <input type="submit" id="buscar_botao" value="Buscar">
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div id="ferrovias">
+            <div id="ferrovia_sul" onclick="ferroviaSul()">
+                <img id="seta_sul" src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia Sul</p>
+            </div>
+            <div id="ferrovia_Aberto" class="ferrovia_Aberto">
+                <div id="menu_rotas">
+                    <div class="rota"> 
+                        <p id="numero">0101</p>
+                        <p id="rota_texto">Sul / Centro</p>
+                    </div>
+                    <div class="rota"> 
+                        <p id="numero2">0102</p>
+                        <p id="rota_texto">Sul / Leste</p>
+                    </div>
+                    <div class="rota"> 
+                        <p id="numero3">0103</p>
+                        <p id="rota_texto">Sul / Oeste</p>
+                    </div>                    
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div id="ferrovia_norte">
+                <img src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia Norte</p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div id="ferrovia_centro">
+                <img src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia Centro</p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div id="ferrovia_leste">
+                <img src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia Leste</p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div id="ferrovia_oeste">
+                <img src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia Oeste</p>
+            </div>
+            <br>
+            <hr>
+        </div>
+    </main>
+</body>
+</html>
