@@ -218,12 +218,12 @@ footer{
  }
 
  #buscar_botao{
-    color: #000000;
+    color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 15px;
     border-style: none;
-    background-color: #ffffff;
+    background-color: #20a562;
     border-radius: 30px;
  }
 
@@ -399,7 +399,6 @@ footer{
 
 /*Alertas*/
 .alertas{
-    font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     margin-top: 7%;
@@ -409,4 +408,29 @@ footer{
 
 .filtros {
     width: 15px;
+}
+
+.titulosenha {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 7%;
+    margin-left: 7%;
+    font-size: 1.8rem;
+}
+
+.frasesenha {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.email {
+    margin-top: 5%;
+    text-align: center;
+    font-size: large;
+}
+
+.recuperarsenha {
+    color:#187f4c;
+    text-align: center;
 }
