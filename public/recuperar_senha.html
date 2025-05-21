@@ -1,10 +1,44 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar senha</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
 </head>
+
 <body>
-    <h1>Não existe isso ainda</h1>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assects/Logo_dashboard.png" onclick="reload()">
+        </div>
+        <div class="menu_dashboard">
+            <img id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
+        </div>
+    </nav>
+    <div id="menu_lateral" class="menu_lateral">
+        <div id="menu_links">
+            <a href="../public/index_gestaoderotas.html">Rotas</a>
+            <a href="../public/index_mapa.html">Mapa</a>
+            <a href="../public/index_manutencao.html">Manutenção</a>
+            <a href="../public/index_relatorios.html">Relatórios</a>
+            <a href="../public/index_alertas.html">Alertas</a>
+        </div>
+    </div>
+    <h1 class="titulosenha">Redefinição de Senha!</h1>
+
+    <p class="frasesenha">Informe um email e enviaremos um link para recuperação da sua senha</p>
+
+    <div class="email">
+        <form action="recuperar_senha.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button class="recuperarsenha" type="submit">Recuperar Senha</button>
+    </div>
+    </form>
 </body>
+
 </html>
