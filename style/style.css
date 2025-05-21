@@ -26,6 +26,7 @@ main{
 .frase_introdutoria img {
     align-items: center;
     width: 12rem;
+    border-radius: 20px;
 }
 
 #frase_introdutoriaText {
@@ -353,7 +354,7 @@ footer{
     width: 100%;
 }
 
-/*Mapa 0101*/
+/*Mapa Aberto Rota*/
 #informacaoRota{
     display: flex;
     margin: 1rem;
