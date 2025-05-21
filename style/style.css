@@ -218,12 +218,12 @@ footer{
  }
 
  #buscar_botao{
-    color: #000000;
+    color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 15px;
     border-style: none;
-    background-color: #ffffff;
+    background-color: #20a562;
     border-radius: 30px;
  }
 
