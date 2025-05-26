@@ -37,10 +37,10 @@ function enviarDados() {
     let validacao_login = true
     let usuario = document.getElementById('usuario_login').value
     let senha = document.getElementById('senha_login').value
-    if (usuario === '') {
+    if (usuario != 'admin') {
         alert('Insira seu usuário')
         validacao_login = false
-    } if (senha === '') {
+    } if (senha != 'admin') {
         alert('Insira sua senha')
         validacao_login = false
     }
@@ -48,7 +48,7 @@ function enviarDados() {
 
     if (validacao_login === true) {
         console.log('Validação feita')
-        window.location.href = 'https://vale.com/pt/trem-de-passageiros'
+        window.location.href = '../public/index_gestaoderotas.html'
     }
 }
 
@@ -110,3 +110,7 @@ function redirecionarMapa0101() {
     window.location.href = '../public/index_mapaAberto0103.html'
 }
 
+function filtroAbrir(){
+    botao_filtro = document.getElementById('filtro').value
+    console.log(botao_filtro)
+}

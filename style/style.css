@@ -2,6 +2,13 @@
     margin: 0px;
 }
 
+.flex{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 35%;
+}
+
 .navbar {
     background-color: black;
     display: flex;
@@ -407,10 +414,15 @@ footer{
     font-size: 1.8rem;
 }
 
-.filtros {
-    width: 15px;
+#filtro{
+    background-color: black;
+    border-style: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 
+/*Recuperar Senha*/
 .titulosenha {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
