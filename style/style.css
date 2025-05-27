@@ -1,8 +1,9 @@
+/*Config geral*/
 * {
     margin: 0px;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
     align-content: center;
@@ -19,10 +20,57 @@
     padding: 5%;
 }
 
-main{
+main {
     background-color: white;
 }
 
+.menu_lateral {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #187f4c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.menu_lateral a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: end;
+    margin-top: 15px;
+}
+
+#menu_links {
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    text-align: right;
+}
+
+.menu_lateral.show {
+    right: 0;
+}
+
+#imagem_menu {
+    width: 130px;
+    margin-left: 50%;
+    position: absolute;
+    top: 2%;
+    right: 5px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+/*Dashboard*/
 .frase_introdutoria {
     display: flex;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -60,7 +108,7 @@ main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 3%;
- }
+}
 
 #texto_login {
     margin-left: 10px;
@@ -72,7 +120,7 @@ main{
     color: #94a0b7;
     background-color: #dddfe3;
     border-radius: 10px;
-    max-width: 100%;
+    width: 100%;
     height: 50px;
     border-style: none;
 }
@@ -83,7 +131,7 @@ main{
     color: #94a0b7;
     background-color: #dddfe3;
     border-radius: 10px;
-    max-width: 100%;
+    width: 100%;
     height: 50px;
     border-style: none;
 }
@@ -120,71 +168,25 @@ main{
     align-content: center;
 }
 
-#olho img{
+#olho img {
     width: 40px;
 }
 
-footer{
+footer {
     background-color: black;
     margin-top: 50%;
 }
 
-.footer h4{
+.footer h4 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: white;
     padding: 3%;
 }
 
-.menu_lateral {
-    position: fixed;
-    top: 0;
-    right: -50%; 
-    width: 50%;
-    height: 100%;
-    background-color: #187f4c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: top;
-    transition: right 0.3s ease;
-    z-index: 1000; 
-}
-
-.menu_lateral a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    justify-content: end;
-    margin-top: 15px;
-}
-
-#menu_links{
-    margin-top: 30%;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    text-align: right;
-}
-
-.menu_lateral.show {
-    right: 0;
-}
-
-#imagem_menu {
-    width: 130px;
-    margin-left: 50%;
-    position: absolute;
-    top: 20px;
-    right: 5px;
-    z-index: 2000;
-    cursor: pointer;
-}
-
 
 /* Gestão de rotas */
-#saudacao p{
+#saudacao p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     margin-top: 7%;
@@ -192,7 +194,7 @@ footer{
     font-size: 1.8rem;
 }
 
-#pesquisar_completo{
+#pesquisar_completo {
     margin-left: 7%;
     margin-top: 2%;
     border-style: none;
@@ -206,7 +208,7 @@ footer{
     color: #dddfe3;
 }
 
-#pesquisar_rota{
+#pesquisar_rota {
     color: #dddfe3;
     width: 80%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -223,9 +225,9 @@ footer{
     font-weight: bold;
     width: 100%;
     font-size: 20px;
- }
+}
 
- #buscar_botao{
+#buscar_botao {
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -233,149 +235,76 @@ footer{
     border-style: none;
     background-color: #20a562;
     border-radius: 30px;
- }
+}
 
- #ferrovia_sul {
+#ferrovia {
     margin-left: 7%;
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    margin-top: 3%;
- }
+}
 
- #ferrovia_sul img{
+#ferrovia img {
     width: 15%;
- }
+}
 
- #ferrovia_sul p{
+#ferrovia p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width: 100%;
     font-size: 30px;
- }
+}
 
- #ferrovia_norte {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_norte img{
-    width: 15%;
- }
-
- #ferrovia_norte p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_centro {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_centro img{
-    width: 15%;
- }
-
- #ferrovia_centro p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_leste {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_leste img{
-    width: 15%;
- }
-
- #ferrovia_leste p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_oeste {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_oeste img{
-    width: 15%;
- }
-
- #ferrovia_oeste p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
-#menu_rotas{
+#menu_rotas {
     margin-left: 8%;
 }
 
-.rota{
+.rota {
     align-items: center;
     gap: 5px;
     display: flex;
     margin-top: 5px;
-    cursor: pointer;;
+    cursor: pointer;
+    ;
 }
 
-#rota_texto{
+#rota_texto {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    padding: 5px;
     text-decoration: underline;
- }
+}
 
- #numero, #numero2, #numero3{
+#numero {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 5px;
     background-color: #187f4c;
     border-radius: 30px;
     color: #dddfe3;
- }
+}
 
 
- /* Mapa */
- .mapa_icaro img {
+/* Mapa */
+.mapa_icaro img {
     width: 100%;
 }
 
 /*Mapa Aberto Rota*/
-#informacaoRota{
+#informacaoRota {
     display: flex;
     margin: 1rem;
     gap: 1rem;
     align-items: center;
 }
 
-#textRota{
+#textRota {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1.8rem;
 }
 
-#numeroRota{
+#numeroRota {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 0.8rem;
@@ -384,21 +313,21 @@ footer{
     color: #dddfe3;
 }
 
-#horarioRota{
+#horarioRota {
     display: flex;
     margin: 1rem;
     gap: 1rem;
     align-items: center;
 }
 
-#textHorario{
+#textHorario {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1rem;
     max-width: 50%;
 }
 
-#textDisponibilidade{
+#textDisponibilidade {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1rem;
@@ -406,7 +335,7 @@ footer{
 }
 
 /*Alertas*/
-.alertas{
+.alertas {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     margin-top: 3%;
@@ -416,7 +345,7 @@ footer{
     display: flex;
 }
 
-#filtro{
+#filtro {
     background-color: black;
     border-style: none;
     color: white;
@@ -446,10 +375,11 @@ footer{
 }
 
 .recuperarsenha {
-    color:#187f4c;
+    color: #187f4c;
     text-align: center;
 }
 
+/*Relátorios*/
 .relatorios {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -461,7 +391,7 @@ footer{
 .hrelatorios {
     width: 1000px;
     height: 2px;
-    background-color:#dddfe3;
+    background-color: #dddfe3;
     margin-top: 10px;
     border-style: solid;
     border-color: #dddfe3;
@@ -532,545 +462,4 @@ footer{
     font-size: 20px;
     text-align: center;
     text-align: justify;
-}
-
-
-* {
-    margin: 0px;
-}
-
-.flex{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 35%;
-}
-
-.navbar {
-    background-color: black;
-    display: flex;
-}
-
-.logo img {
-    width: 30%;
-    padding: 5%;
-}
-
-main{
-    background-color: white;
-}
-
-.frase_introdutoria {
-    display: flex;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 5%;
-    max-width: 30rem;
-}
-
-.frase_introdutoria img {
-    align-items: center;
-    width: 12rem;
-    border-radius: 20px;
-}
-
-#frase_introdutoriaText {
-    display: inline;
-    font-size: 230%;
-}
-
-.login {
-    background-color: #187f4c;
-    color: #dddfe3;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 40px;
-    border-radius: 20%;
-    padding: 5%;
-    margin: 10px 20px;
-    height: 260px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.login ::-webkit-input-placeholder {
-    color: #94a0b7;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 3%;
- }
-
-#texto_login {
-    margin-left: 10px;
-}
-
-#usuario_login {
-    margin: 5px;
-    font-size: 30px;
-    color: #94a0b7;
-    background-color: #dddfe3;
-    border-radius: 10px;
-    max-width: 100%;
-    height: 50px;
-    border-style: none;
-}
-
-#senha_login {
-    margin: 5px;
-    font-size: 30px;
-    color: #94a0b7;
-    background-color: #dddfe3;
-    border-radius: 10px;
-    max-width: 100%;
-    height: 50px;
-    border-style: none;
-}
-
-#enviarDados {
-    margin: 5px;
-    font-size: 30px;
-    color: white;
-    background-color: rgb(27, 77, 27);
-    border-radius: 10px;
-    width: 100%;
-    height: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-style: none;
-}
-
-#esqueceu_senha {
-    font-size: 20px;
-    text-decoration: none;
-    color: #dddfe3;
-    margin-left: 10px;
-}
-
-#olho {
-    cursor: pointer;
-    position: absolute;
-    max-width: 50px;
-    height: 20px;
-    padding: 5px;
-    margin-left: 67%;
-    margin-top: 2%;
-    border-style: none;
-    background-color: #dddfe3;
-    align-content: center;
-}
-
-#olho img{
-    width: 40px;
-}
-
-footer{
-    background-color: black;
-    margin-top: 50%;
-}
-
-.footer h4{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    color: white;
-    padding: 3%;
-}
-
-.menu_lateral {
-    position: fixed;
-    top: 0;
-    right: -50%; 
-    width: 50%;
-    height: 100%;
-    background-color: #187f4c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: top;
-    transition: right 0.3s ease;
-    z-index: 1000; 
-}
-
-.menu_lateral a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    justify-content: end;
-    margin-top: 15px;
-}
-
-#menu_links{
-    margin-top: 30%;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    text-align: right;
-}
-
-.menu_lateral.show {
-    right: 0;
-}
-
-#imagem_menu {
-    width: 130px;
-    margin-left: 50%;
-    position: absolute;
-    top: 20px;
-    right: 5px;
-    z-index: 2000;
-    cursor: pointer;
-}
-
-
-/* Gestão de rotas */
-#saudacao p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 7%;
-    margin-left: 7%;
-    font-size: 1.8rem;
-}
-
-#pesquisar_completo{
-    margin-left: 7%;
-    margin-top: 2%;
-    border-style: none;
-    border-radius: 30px;
-    background-color: #187f4c;
-    width: 77%;
-    height: 3%;
-    padding: 3%;
-    display: flex;
-    gap: 0px;
-    color: #dddfe3;
-}
-
-#pesquisar_rota{
-    color: #dddfe3;
-    width: 80%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    border-style: none;
-    background-color: #187f4c;
-}
-
-
-#pesquisar_completo ::-webkit-input-placeholder {
-    color: #dddfe3;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 20px;
- }
-
- #buscar_botao{
-    color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    border-style: none;
-    background-color: #20a562;
-    border-radius: 30px;
- }
-
- #ferrovia_sul {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    margin-top: 3%;
- }
-
- #ferrovia_sul img{
-    width: 15%;
- }
-
- #ferrovia_sul p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_norte {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_norte img{
-    width: 15%;
- }
-
- #ferrovia_norte p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_centro {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_centro img{
-    width: 15%;
- }
-
- #ferrovia_centro p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_leste {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_leste img{
-    width: 15%;
- }
-
- #ferrovia_leste p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
- #ferrovia_oeste {
-    margin-left: 7%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
- }
-
- #ferrovia_oeste img{
-    width: 15%;
- }
-
- #ferrovia_oeste p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    width: 100%;
-    font-size: 30px;
- }
-
-#menu_rotas{
-    margin-left: 8%;
-}
-
-.rota{
-    align-items: center;
-    gap: 5px;
-    display: flex;
-    margin-top: 5px;
-    cursor: pointer;;
-}
-
-#rota_texto{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    text-decoration: underline;
- }
-
- #numero, #numero2, #numero3{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
- }
-
-
- /* Mapa */
- .mapa_icaro img {
-    width: 100%;
-}
-
-/*Mapa Aberto Rota*/
-#informacaoRota{
-    display: flex;
-    margin: 1rem;
-    gap: 1rem;
-    align-items: center;
-}
-
-#textRota{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 1.8rem;
-}
-
-#numeroRota{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 0.8rem;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-}
-
-#horarioRota{
-    display: flex;
-    margin: 1rem;
-    gap: 1rem;
-    align-items: center;
-}
-
-#textHorario{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    max-width: 50%;
-}
-
-#textDisponibilidade{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    max-width: 45%;
-}
-
-/*Alertas*/
-.alertas{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 1.8rem;
-    width: 120px;
-    display: flex;
-}
-
-#filtro{
-    background-color: black;
-    border-style: none;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-}
-
-/*Recuperar Senha*/
-.titulosenha {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 7%;
-    margin-left: 7%;
-    font-size: 1.8rem;
-}
-
-.frasesenha {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 5%;
-    text-align: center;
-}
-
-.email {
-    margin-top: 5%;
-    text-align: center;
-    font-size: large;
-}
-
-.recuperarsenha {
-    color:#187f4c;
-    text-align: center;
-}
-
-.relatorios {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 1.8rem;
-}
-
-.hrelatorios {
-    width: 1000px;
-    height: 2px;
-    background-color:#dddfe3;
-    margin-top: 10px;
-    border-style: solid;
-    border-color: #dddfe3;
-}
-
-.desempenho {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 170px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.consumoenergia {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 250px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.eficienciaop {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 270px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.comunicado {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 150px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.textocomunicado {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    width: 300px;
-    font-size: 20px;
-    text-align: center;
-    text-align: justify;
-}
-
-.ksdaasfas {
-    
 }

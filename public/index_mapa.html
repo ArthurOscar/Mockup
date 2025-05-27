@@ -27,60 +27,32 @@
         </div>
     </div>
     <main>
+        <div id="informacaoRota">
+            <p id="textRota">Rota</p>
+            <p id="numeroRota">0101</p>
+        </div>
+        <div id="horarioRota">
+            <p id="textHorario">Horário de partida: 8:20</p>
+            <p id="textDisponibilidade">Disponibilidade: Seg a Seg</p>
+        </div>
         <div class="mapa_icaro">
-            <img id="mapa" class="mapa" src="../assects/Mapa.PNG" alt="">
+            <img id="mapa" class="mapa" src="../assects/mapa0101.png" alt="">
         </div>
         <hr>
+        <br>
         <div id="ferrovias">
-            <div id="ferrovia_sul" onclick="ferroviaSul(); mapaSul()">
-                <img id="seta_sul" src="../assects/seta_ferrovia.png" alt="">
-                <p>Ferrovia Sul</p>
+            <div id="ferrovia" onclick="ferrovia()">
+                <img id="seta" src="../assects/seta_ferrovia.png" alt="">
+                <p>Ferrovia</p>
             </div>
             <div id="ferrovia_Aberto" class="ferrovia_Aberto">
                 <div id="menu_rotas">
-                    <div class="rota" onclick="redirecionarMapa0101()"> 
+                    <div class="rota" onclick="redirecionarMapa()"> 
                         <p id="numero">0101</p>
                         <p id="rota_texto">Sul / Centro</p>
                     </div>
-                    <div class="rota" onclick="redirecionarMapa0102()">
-                        <p id="numero2">0102</p>
-                        <p id="rota_texto">Sul / Leste</p>
-                    </div>
-                    <div class="rota" onclick="redirecionarMapa0103()">
-                        <p id="numero3">0103</p>
-                        <p id="rota_texto">Sul / Oeste</p>
-                    </div>
                 </div>
             </div>
-            <br>
-            <hr>
-            <br>
-            <div id="ferrovia_norte">
-                <img src="../assects/seta_ferrovia.png" alt="">
-                <p>Ferrovia Norte</p>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div id="ferrovia_centro">
-                <img src="../assects/seta_ferrovia.png" alt="">
-                <p>Ferrovia Centro</p>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div id="ferrovia_leste">
-                <img src="../assects/seta_ferrovia.png" alt="">
-                <p>Ferrovia Leste</p>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div id="ferrovia_oeste">
-                <img src="../assects/seta_ferrovia.png" alt="">
-                <p>Ferrovia Oeste</p>
-            </div>
-            <br>
             <hr>
         </div>
     </main>

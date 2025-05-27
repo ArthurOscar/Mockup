@@ -56,23 +56,19 @@ let imgFerrovia1 = "../assects/seta_ferrovia.png"
 let imgFerrovia2 = "../assects/seta_ferrovia2.png"
 let ferroviaAberto = false
 
-function ferroviaSul() {
+function ferrovia() {
     let menu_rotas = document.getElementById('ferrovia_Aberto')
-    let seta = document.getElementById('seta_sul')
+    let seta = document.getElementById('seta')
     if (!ferroviaAberto) {
         document.getElementById('menu_rotas').style.fontSize = '20px'
-        document.getElementById('menu_rotas').style.height = '100px'
+        document.getElementById('menu_rotas').style.height = '5%'
         document.getElementById('menu_rotas').style.justifyContent = 'top'
         document.querySelector('#numero').style.padding = '5px'
-        document.querySelector('#numero2').style.padding = '5px'
-        document.querySelector('#numero3').style.padding = '5px'
         seta.src = imgFerrovia2
     } else {
         document.getElementById('menu_rotas').style.height = '0px'
         document.getElementById('menu_rotas').style.fontSize = '0'
         document.querySelector('#numero').style.padding = '0'
-        document.querySelector('#numero2').style.padding = '0'
-        document.querySelector('#numero3').style.padding = '0'
         seta.src = imgFerrovia1
     }
     ferroviaAberto = !ferroviaAberto;
@@ -81,33 +77,13 @@ function ferroviaSul() {
 window.onload = () => {
     ferroviaAberto = false;
     document.querySelector('#numero').style.padding = '0';
-    document.querySelector('#numero2').style.padding = '0';
-    document.querySelector('#numero3').style.padding = '0';
     document.getElementById('ferrovia_Aberto').style.fontSize = '0';
     document.getElementById('menu_rotas').style.height = '0px';
     document.getElementById('seta_sul').src = imgFerrovia1;
 };
 
-let imgMapa1 = "../assects/Mapa.png"
-let imgMapa2 = "../assects/MapaFerroviaSul.png"
-let mapaAberto = false
-function mapaSul() {
-    let mapa_sul = document.querySelector('.mapa')
-    let mapa = document.getElementById('mapa')
-    if (!mapaAberto) {
-        mapa.src = imgMapa2
-    } else {
-        mapa.src = imgMapa1
-    }
-    mapaAberto = !mapaAberto
-}
-
-function redirecionarMapa0101() {
-        window.location.href = '../public/index_mapaAberto0101.html'
-} function redirecionarMapa0102() {
-    window.location.href = '../public/index_mapaAberto0102.html'
-} function redirecionarMapa0103() {
-    window.location.href = '../public/index_mapaAberto0103.html'
+function redirecionarMapa() {
+        window.location.href = '../public/index_mapa.html'
 }
 
 function filtroAbrir(){
