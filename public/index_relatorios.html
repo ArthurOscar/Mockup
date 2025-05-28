@@ -27,11 +27,23 @@
         </div>
     </div>
 
-    <div id="relatorios" class="relatorios">
-        <p>Relatórios</p>
+    <div class="flex">
+        <div id="alertas" class="alertas">
+            <p>Relatórios</p>
+        </div>
+        <form action="#">
+            <select name="filtrorelatorio" id="filtrorelatorio" required onclick="filtroAbrir()">
+                <option value="Filtros">Filtros</option>
+                <option value="ferrovia sul">Ferrovia Sul</option>
+                <option value="ferrovia norte">Ferrovia Norte</option>
+                <option value="ferrovia centro">Ferrovia Centro</option>
+                <option value="ferrovia oeste">Ferrovia Oeste</option>
+                <option value="ferrovia leste ">Ferrovia Leste</option>
+            </select>
+        </form>
     </div>
 
-    <hr>
+    <hr class="hrrelatorio">
 
     <div class="desempenho">
         <p>Desempenho</p>

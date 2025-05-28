@@ -946,7 +946,7 @@ footer{
 .alertas{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 3%;
+    margin-top: -1px;
     margin-left: 3%;
     font-size: 1.8rem;
     width: 120px;
@@ -959,6 +959,7 @@ footer{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    margin-top: -15px;
 }
 
 /*Recuperar Senha*/
@@ -993,15 +994,7 @@ footer{
     margin-top: 3%;
     margin-left: 3%;
     font-size: 1.8rem;
-}
-
-.hrelatorios {
-    width: 1000px;
-    height: 2px;
-    background-color:#dddfe3;
-    margin-top: 10px;
-    border-style: solid;
-    border-color: #dddfe3;
+    
 }
 
 .desempenho {
@@ -1063,14 +1056,56 @@ footer{
 .textocomunicado {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 3%;
+    margin-top: 3px;
     margin-left: 3%;
     width: 300px;
     font-size: 20px;
     text-align: center;
     text-align: justify;
+    letter-spacing: -1px;
+}
+
+.textocomunicado2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-left: 3%;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    text-align: justify;
+    width: 270px;
+    letter-spacing: -1px;
+}
+
+.textocomunicado3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-left: 3%;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    text-align: justify;
+    width: 270px;
+    letter-spacing: -1px;
 }
 
 .hr {
     margin-top: -15px;
+}
+
+.hrrelatorio {
+    margin-top: 10px;
+}
+
+#filtrorelatorio {
+    background-color: black;
+    border-style: none;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-left: -15px;
+    margin-top: 3px;
+    height: 25px;
 }
