@@ -974,7 +974,10 @@ footer{
 .frasesenha {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5%;
+    margin-left: 7%;
     text-align: center;
+    text-align: justify;
+    width: 350px;
 }
 
 .email {
