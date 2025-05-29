@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashBoard</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
 </head>
@@ -24,19 +24,14 @@
             <strong id="texto_login">Fazer Login:</strong><br>
             <input type="text" name="usuario_login" id="usuario_login" placeholder="Usuário">
             <div class="senha">
+                <input type="password" id="senha_login" placeholder="Senha">
                 <button id="olho" onclick="togglePasswordVisibility()"><img
                         src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png"></button>
-                <input type="password" id="senha_login" placeholder="Senha">
             </div>
             <button onclick="enviarDados()" id="enviarDados">Entrar</button>
             <a href="recuperar_senha.html" id="esqueceu_senha">Esqueceu a senha?</a>
         </div>
     </main>
-    <footer>
-        <div class="footer">
-            <h4>Direitos reservados a TremVida©, 2025</h4>
-        </div>
-    </footer>
 </body>
 
 </html>
