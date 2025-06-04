@@ -2,14 +2,14 @@
     margin: 0px;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
     align-content: center;
-    gap: 35%;
+    margin-bottom: 5%;
 }
 
-body{
+body {
     width: 100%;
 }
 
@@ -21,7 +21,7 @@ body{
     align-content: center;
 }
 
-.logo{
+.logo {
     width: 100%;
     text-align: center;
 }
@@ -31,7 +31,7 @@ body{
     padding: 10px;
 }
 
-main{
+main {
     background-color: white;
     max-width: 100%;
 }
@@ -39,7 +39,7 @@ main{
 .menu_lateral {
     position: fixed;
     top: 0;
-    right: -50%; 
+    right: -50%;
     width: 50%;
     height: 100%;
     background-color: #187f4c;
@@ -48,7 +48,7 @@ main{
     align-items: center;
     justify-content: top;
     transition: right 0.3s ease;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .menu_lateral a {
@@ -60,7 +60,7 @@ main{
     margin-top: 15px;
 }
 
-#menu_links{
+#menu_links {
     margin-top: 30%;
     display: flex;
     flex-direction: column;
@@ -119,7 +119,7 @@ main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 3%;
- }
+}
 
 #texto_login {
     margin-left: 10px;
@@ -134,10 +134,10 @@ main{
     border-radius: 10px;
     width: 100%;
     height: 50px;
-    border-style: none; 
+    border-style: none;
 }
 
-.senha{
+.senha {
     display: flex;
     align-items: center;
 }
@@ -180,12 +180,12 @@ main{
     height: 50px;
 }
 
-#olho img{
+#olho img {
     width: 100%;
 }
 
 /* Gestão de rotas */
-#saudacao p{
+#saudacao p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     margin-top: 7%;
@@ -193,7 +193,7 @@ main{
     font-size: 1.8rem;
 }
 
-#pesquisar_completo{
+#pesquisar_completo {
     margin-left: 7%;
     margin-top: 2%;
     border-style: none;
@@ -207,7 +207,7 @@ main{
     color: #dddfe3;
 }
 
-#pesquisar_rota{
+#pesquisar_rota {
     color: #dddfe3;
     width: 80%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -224,9 +224,9 @@ main{
     font-weight: bold;
     width: 100%;
     font-size: 20px;
- }
+}
 
- #buscar_botao{
+#buscar_botao {
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -234,83 +234,120 @@ main{
     border-style: none;
     background-color: #20a562;
     border-radius: 30px;
- }
+}
 
- #ferrovia {
+#ferrovia {
     margin-left: 7%;
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
- }
+}
 
- #ferrovia img{
+#ferrovia img {
     width: 15%;
- }
+}
 
- #ferrovia p{
+#ferrovia p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width: 100%;
     font-size: 30px;
- }
+}
 
-#menu_rotas{
+#menu_rotas {
     margin-left: 8%;
 }
 
-#mapaStyle{
+#mapaStyle {
     display: flex;
 }
 
-#mapaStyle p{
+#mapaStyle p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     max-width: 90%;
 }
 
-.rota{
+.rota {
     align-items: center;
     gap: 5px;
     display: flex;
     margin-top: 5px;
-    cursor: pointer;;
+    cursor: pointer;
+    ;
 }
 
-#rota_texto{
+#rota_texto {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 5px;
     text-decoration: underline;
- }
+}
 
- #numero {
+#numero {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 5px;
     background-color: #187f4c;
     border-radius: 30px;
     color: #dddfe3;
- }
-
-/*Alertas*/
-.alertas{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: -1px;
-    margin-left: 3%;
-    font-size: 1.8rem;
-    width: 120px;
-    display: flex;
 }
 
-#filtro{
+/*Alertas*/
+.alertas {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-top: 7%;
+    margin-left: 7%;
+    max-width: 30%;
+}
+
+#filtro {
     background-color: black;
     border-style: none;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: -15px;
+    height: 30px;
+    font-size: 1rem;
+    margin-left: 100%;
+    margin-top: 20%;
+}
+
+
+.textoAlerta {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 7%;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    text-align: justify;
+}
+
+/* Relátorios */
+.relatorios {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 7%;
+    font-size: 1.8rem;
+}
+
+.textGreen {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 3%;
+    font-size: 20px;
+    background-color: #187f4c;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+    border-radius: 20px;
+    color: #dddfe3;
 }
 
 /*Recuperar Senha*/
@@ -338,121 +375,6 @@ main{
 }
 
 .recuperarsenha {
-    color:#187f4c;
+    color: #187f4c;
     text-align: center;
-}
-
-/* Relátorios */
-.relatorios {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 1.8rem;
-    
-}
-
-.desempenho {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 170px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.consumoenergia {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 250px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.eficienciaop {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 270px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.comunicado {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
-    background-color: #187f4c;
-    height: 30px;
-    width: 150px;
-    text-align: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
-
-.textocomunicado {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3px;
-    margin-left: 3%;
-    width: 300px;
-    font-size: 20px;
-    text-align: center;
-    text-align: justify;
-    letter-spacing: -1px;
-}
-
-.textocomunicado2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3px;
-    margin-left: 3%;
-    width: 300px;
-    font-size: 20px;
-    text-align: center;
-    text-align: justify;
-    width: 270px;
-    letter-spacing: -1px;
-}
-
-.textocomunicado3 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 3px;
-    margin-left: 3%;
-    width: 300px;
-    font-size: 20px;
-    text-align: center;
-    text-align: justify;
-    width: 270px;
-    letter-spacing: -1px;
-}
-
-#filtrorelatorio {
-    background-color: black;
-    border-style: none;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-left: -15px;
-    margin-top: 3px;
-    height: 25px;
 }

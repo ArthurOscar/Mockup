@@ -14,29 +14,14 @@
         <div class="logo">
             <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
-        <div class="menu_dashboard">
-            <img id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
-        </div>
     </nav>
-    <div id="menu_lateral" class="menu_lateral">
-        <div id="menu_links">
-            <a href="../public/index_gestaoderotas.html">Rotas</a>
-            <a href="../public/index_mapa.html">Mapa</a>
-            <a href="../public/index_manutencao.html">Manutenção</a>
-            <a href="../public/index_relatorios.html">Relatórios</a>
-            <a href="../public/index_alertas.html">Alertas</a>
-        </div>
-    </div>
     <h1 class="titulosenha">Redefinição de Senha!</h1>
-
-    <p class="frasesenha">Para redefinir sua senha, informe o usuário ou e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
-
+    <p class="frasesenha">Para redefinir sua senha, informe o usuário ou e-mail cadastrado na sua conta e enviaremos um link com as instruções para ser administrador.</p>
     <div class="email">
         <form action="recuperar_senha.php">
             <label for="user">E-mail ou Usuário:</label>
             <input type="text" id="email" name="user" required><br><br>
-
-            <button class="recuperarsenha" type="submit">Recuperar Senha</button>
+            <button class="recuperarsenha" type="submit" onclick="recuperarSenha()">Recuperar Senha</button>
     </div>
     </form>
 </body>

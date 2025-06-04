@@ -61,20 +61,28 @@ function ferrovia() {
     let seta = document.getElementById('seta')
     if (!ferroviaAberto) {
         document.getElementById('menu_rotas').style.fontSize = '20px'
-        document.getElementById('menu_rotas').style.height = '210px'
+        document.getElementById('menu_rotas').style.height = '23%'
         document.getElementById('menu_rotas').style.justifyContent = 'top'
         document.querySelector('#numero').style.padding = '5px'
-        document.getElementById('mapa_ferrovia').style.padding = '5px';
-        document.getElementById('mapa_ferrovia').style.width = '50%';
-        document.getElementById('mapa_ferrovia').style.height = '70%';
+        document.getElementById('mapa_ferrovia').style.padding = '5px'
+        document.getElementById('mapa_ferrovia').style.width = '50%'
+        document.getElementById('mapa_ferrovia').style.height = '120px'
+        document.querySelector('.textGreen').style.padding = '5px'
+        document.querySelector('.textGreen').style.width = '50%'
+        document.querySelector('.textGreen').style.height = '23px'
+        document.querySelector('.textGreen').style.fontSize = '20px'
         seta.src = imgFerrovia2
     } else {
         document.getElementById('menu_rotas').style.height = '0px'
         document.getElementById('menu_rotas').style.fontSize = '0'
         document.querySelector('#numero').style.padding = '0'
-        document.getElementById('mapa_ferrovia').style.padding = '0';
-        document.getElementById('mapa_ferrovia').style.width = '0';
-        document.getElementById('mapa_ferrovia').style.height = '0';
+        document.getElementById('mapa_ferrovia').style.padding = '0'
+        document.getElementById('mapa_ferrovia').style.width = '0'
+        document.getElementById('mapa_ferrovia').style.height = '0'
+        document.querySelector('.textGreen').style.padding = '0'
+        document.querySelector('.textGreen').style.width = '0'
+        document.querySelector('.textGreen').style.height = '0'
+        document.querySelector('.textGreen').style.fontSize = '0'
         seta.src = imgFerrovia1
     }
     ferroviaAberto = !ferroviaAberto;
@@ -82,20 +90,15 @@ function ferrovia() {
 
 window.onload = () => {
     ferroviaAberto = false;
-    document.querySelector('#numero').style.padding = '0';
-    document.getElementById('ferrovia_Aberto').style.fontSize = '0';
-    document.getElementById('menu_rotas').style.height = '0px';
-    document.getElementById('mapa_ferrovia').style.width = '0px';
-    document.getElementById('mapa_ferrovia').style.height = '0px';
-    document.getElementById('mapa_ferrovia').style.padding = '0px';
-    document.getElementById('seta_sul').src = imgFerrovia1;
+    document.querySelector('#numero').style.padding = '0'
+    document.getElementById('ferrovia_Aberto').style.fontSize = '0'
+    document.getElementById('menu_rotas').style.height = '0px'
+    document.getElementById('mapa_ferrovia').style.width = '0px'
+    document.getElementById('mapa_ferrovia').style.height = '0px'
+    document.getElementById('mapa_ferrovia').style.padding = '0px'
+    document.querySelector('.textGreen').style.padding = '0'
+    document.querySelector('.textGreen').style.width = '0'
+    document.querySelector('.textGreen').style.height = '0'
+    document.querySelector('.textGreen').style.fontSize = '0'
+    document.getElementById('seta').src = imgFerrovia1;
 };
-
-function redirecionarMapa() {
-    window.location.href = '../public/index_mapa.html'
-}
-
-function filtroAbrir() {
-    botao_filtro = document.getElementById('filtro').value
-    console.log(botao_filtro)
-}
