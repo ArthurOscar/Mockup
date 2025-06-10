@@ -49,80 +49,94 @@ function enviarDados() {
 const paginaLogin = window.location.pathname
 const paginaLoginName = paginaLogin.substring(paginaLogin.lastIndexOf('/') + 1)
 
-if(paginaLoginName === 'index_gestaoderotas.html'){
-let imgFerrovia1 = "../assects/seta_ferrovia.png"
-let imgFerrovia2 = "../assects/seta_ferrovia2.png"
-let ferroviaAberto = false
+if (paginaLoginName === 'index_gestaoderotas.html') {
+    let imgFerrovia1 = "../assects/seta_ferrovia.png"
+    let imgFerrovia2 = "../assects/seta_ferrovia2.png"
+    let ferroviaAberto = false
 
-function ferrovia() {
-    let menu_rotas = document.getElementById('ferrovia_Aberto')
-    let seta = document.getElementById('seta')
-    if (!ferroviaAberto) {
-        document.getElementById('menu_rotas').style.fontSize = '20px'
-        document.getElementById('menu_rotas').style.height = '20%'
-        document.getElementById('menu_rotas').style.justifyContent = 'top'
-        document.querySelector('#numero').style.padding = '5px'
-        document.getElementById('mapa_ferrovia').style.padding = '5px'
-        document.getElementById('mapa_ferrovia').style.width = '50%'
-        document.getElementById('mapa_ferrovia').style.height = '120px'
-        seta.src = imgFerrovia2
-    } else {
-        document.getElementById('menu_rotas').style.height = '0px'
-        document.getElementById('menu_rotas').style.fontSize = '0'
-        document.querySelector('#numero').style.padding = '0'
-        document.getElementById('mapa_ferrovia').style.padding = '0'
-        document.getElementById('mapa_ferrovia').style.width = '0'
-        document.getElementById('mapa_ferrovia').style.height = '0'
-        seta.src = imgFerrovia1
+    function ferrovia() {
+        let menu_rotas = document.getElementById('ferrovia_Aberto')
+        let seta = document.getElementById('seta')
+        if (!ferroviaAberto) {
+            document.getElementById('menu_rotas').style.fontSize = '20px'
+            document.getElementById('menu_rotas').style.height = '20%'
+            document.getElementById('menu_rotas').style.justifyContent = 'top'
+            document.querySelector('#numero').style.padding = '5px'
+            document.getElementById('mapa_ferrovia').style.padding = '5px'
+            document.getElementById('mapa_ferrovia').style.width = '50%'
+            document.getElementById('mapa_ferrovia').style.height = '120px'
+            seta.src = imgFerrovia2
+        } else {
+            document.getElementById('menu_rotas').style.height = '0px'
+            document.getElementById('menu_rotas').style.fontSize = '0'
+            document.querySelector('#numero').style.padding = '0'
+            document.getElementById('mapa_ferrovia').style.padding = '0'
+            document.getElementById('mapa_ferrovia').style.width = '0'
+            document.getElementById('mapa_ferrovia').style.height = '0'
+            seta.src = imgFerrovia1
+        }
+        ferroviaAberto = !ferroviaAberto;
     }
-    ferroviaAberto = !ferroviaAberto;
+
+    window.onload = () => {
+        ferroviaAberto = false;
+        document.querySelector('#numero').style.padding = '0'
+        document.getElementById('ferrovia_Aberto').style.fontSize = '0'
+        document.getElementById('menu_rotas').style.height = '0px'
+        document.getElementById('mapa_ferrovia').style.width = '0px'
+        document.getElementById('mapa_ferrovia').style.height = '0px'
+        document.getElementById('mapa_ferrovia').style.padding = '0px'
+        document.getElementById('seta').src = imgFerrovia1;
+    };
 }
 
-window.onload = () => {
-    ferroviaAberto = false;
-    document.querySelector('#numero').style.padding = '0'
-    document.getElementById('ferrovia_Aberto').style.fontSize = '0'
-    document.getElementById('menu_rotas').style.height = '0px'
-    document.getElementById('mapa_ferrovia').style.width = '0px'
-    document.getElementById('mapa_ferrovia').style.height = '0px'
-    document.getElementById('mapa_ferrovia').style.padding = '0px'
-    document.getElementById('seta').src = imgFerrovia1;
-};}
+const paginaManutencao = window.location.pathname
+const paginaManutencaoName = paginaManutencao.substring(paginaManutencao.lastIndexOf('/') + 1)
 
-const paginaManutecao = window.location.pathname
-const paginaManutecaoName = paginaLogin.substring(paginaLogin.lastIndexOf('/') + 1)
+if (paginaManutencaoName === 'index_manutencao.html') {
+    let imgFerrovia1 = "../assects/seta_ferrovia.png"
+    let imgFerrovia2 = "../assects/seta_ferrovia2.png"
+    let ferroviaAberto = false
 
-if(paginaLoginName === 'index_manutencao.html'){
-let imgFerrovia1 = "../assects/seta_ferrovia.png"
-let imgFerrovia2 = "../assects/seta_ferrovia2.png"
-let ferroviaAberto = false
-
-function ferrovia() {
-    let menu_rotas = document.getElementById('ferrovia_Aberto')
-    let seta = document.getElementById('seta')
-    if (!ferroviaAberto) {
-        document.getElementById('menu_rotas').style.fontSize = '20px'
-        document.getElementById('menu_rotas').style.height = '5%'
-        document.getElementById('menu_rotas').style.justifyContent = 'top'
-        document.querySelector('#numero').style.padding = '5px'
-        seta.src = imgFerrovia2
-    } else {
-        document.getElementById('menu_rotas').style.height = '0px'
-        document.getElementById('menu_rotas').style.fontSize = '0'
-        document.querySelector('#numero').style.padding = '0'
-        seta.src = imgFerrovia1
+    function ferrovia() {
+        let menu_rotas = document.getElementById('ferrovia_Aberto')
+        let seta = document.getElementById('seta')
+        if (!ferroviaAberto) {
+            document.getElementById('menu_rotas').style.fontSize = '20px'
+            document.getElementById('menu_rotas').style.height = '5%'
+            document.getElementById('menu_rotas').style.justifyContent = 'top'
+            document.querySelector('#numero').style.padding = '5px'
+            seta.src = imgFerrovia2
+        } else {
+            document.getElementById('menu_rotas').style.height = '0px'
+            document.getElementById('menu_rotas').style.fontSize = '0'
+            document.querySelector('#numero').style.padding = '0'
+            seta.src = imgFerrovia1
+        }
+        ferroviaAberto = !ferroviaAberto;
     }
-    ferroviaAberto = !ferroviaAberto;
+    window.onload = () => {
+        ferroviaAberto = false;
+        document.querySelector('#numero').style.padding = '0'
+        document.getElementById('ferrovia_Aberto').style.fontSize = '0'
+        document.getElementById('menu_rotas').style.height = '0px'
+        document.getElementById('seta').src = imgFerrovia1;
+    };
 }
-window.onload = () => {
-    ferroviaAberto = false;
-    document.querySelector('#numero').style.padding = '0'
-    document.getElementById('ferrovia_Aberto').style.fontSize = '0'
-    document.getElementById('menu_rotas').style.height = '0px'
-    document.getElementById('seta').src = imgFerrovia1;
-};}
 
+const paginaSenha = window.location.pathname
+const paginaSenhaName = paginaSenha.substring(paginaSenha.lastIndexOf('/') + 1)
 
-function recuperarSenha(){
-  window.location.href = 'index_telaDeLogin.html'
-  } 
+if (paginaSenhaName === 'recuperar_senha.html') {
+    window.onload = () => {
+        document.getElementById('enviarDados').style.width = '80%'
+    }
+    let user = document.getElementById('user')
+    function recuperarSenha() {
+        if (user === '') {
+            alert('Inseria o campo corretamente')
+        } else {
+            window.location.href = 'index_telaDeLogin.html'
+        }
+    }
+}
