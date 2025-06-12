@@ -294,6 +294,32 @@ main {
     color: #dddfe3;
 }
 
+#numero-0101_2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+}
+
+#numero-titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+}
+
+#numero-0101 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+}
 /*Alertas*/
 .alertas {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -312,7 +338,7 @@ main {
     font-weight: bold;
     height: 30px;
     font-size: 1rem;
-    margin-left: 100%;
+    margin-left: 80%;
     margin-top: 20%;
 }
 
