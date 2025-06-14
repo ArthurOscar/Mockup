@@ -194,17 +194,15 @@ main {
 }
 
 #pesquisar_completo {
-    margin-left: 7%;
-    margin-top: 2%;
+    margin: 2% 7%;
     border-style: none;
     border-radius: 30px;
     background-color: #187f4c;
     width: 77%;
-    height: 3%;
-    padding: 3%;
+    padding: 2%;
     display: flex;
-    gap: 0px;
     color: #dddfe3;
+    justify-content: space-between;
 }
 
 #pesquisar_rota {
@@ -212,8 +210,9 @@ main {
     width: 80%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-style: none;
+    border-radius: 30px;
     background-color: #187f4c;
 }
 
@@ -230,10 +229,13 @@ main {
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 15px;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
     border-style: none;
     background-color: #20a562;
     border-radius: 30px;
+    justify-content: end;
 }
 
 #ferrovia {
@@ -292,42 +294,14 @@ main {
     background-color: #187f4c;
     border-radius: 30px;
     color: #dddfe3;
+    text-align: center;
 }
 
-#numero-0101_2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-}
-
-#numero-titulo {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-}
-
-#numero-0101 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-}
 /*Alertas*/
 .alertas {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1.8rem;
-    margin-top: 7%;
-    margin-left: 7%;
-    max-width: 30%;
 }
 
 #filtro {
@@ -338,20 +312,58 @@ main {
     font-weight: bold;
     height: 30px;
     font-size: 1rem;
-    margin-left: 80%;
-    margin-top: 20%;
 }
 
+#abaFiltro {
+    justify-content: end;
+    size: 100rem;
+}
+
+.flex-Alertas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5%;
+}
 
 .textoAlerta {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 3%;
-    margin-left: 7%;
-    width: 300px;
+    margin: 0.7rem 2rem;
     font-size: 20px;
     text-align: center;
     text-align: justify;
+    margin-left: 3%;
+}
+
+.textGreen_comunicado {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 3%;
+    font-size: 20px;
+    background-color: #187f4c;
+    height: 30px;
+    width: 9.375rem;
+    text-align: center;
+    align-content: center;
+    border-radius: 20px;
+    color: #dddfe3;
+}
+
+.textGreen_alerta {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 3%;
+    font-size: 20px;
+    background-color: #187f4c;
+    height: 30px;
+    width: 5.625rem;
+    text-align: center;
+    align-content: center;
+    border-radius: 20px;
+    color: #dddfe3;
 }
 
 /* Relátorios */
@@ -362,18 +374,34 @@ main {
     font-size: 1.8rem;
 }
 
-.textGreen {
+#numero-0101 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 20px;
+    padding: 5px;
     background-color: #187f4c;
-    height: 30px;
-    width: 170px;
-    text-align: center;
-    border-radius: 20px;
+    border-radius: 30px;
     color: #dddfe3;
+    text-align: center;
+}
+
+#numero-0101_2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+    text-align: center;
+}
+
+#numero-titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+    text-align: center;
 }
 
 /*Recuperar Senha*/
