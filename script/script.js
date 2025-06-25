@@ -1,10 +1,13 @@
 /* Ver Senha */
 function togglePasswordVisibility() {
     let senha = document.getElementById("senha_login");
+    let olho = document.getElementById("olho_img");
     if (senha.type === "password") {
         senha.type = "text";
+        olho.src = '../assects/close-eye.png';
     } else {
         senha.type = "password";
+         olho.src = '../assects/show.png';
     }
 }
 
