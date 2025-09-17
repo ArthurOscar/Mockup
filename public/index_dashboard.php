@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assects/Logo_dashboard.png" onclick="reload()">
+        </div>
+        <div class="menu_dashboard">
+            <img id="imagem_menu" onclick="trocar_menu()" src="../assects/menu_dashboard.png">
+        </div>
+    </nav>
+    <div id="menu_lateral" class="menu_lateral">
+        <div id="menu_links">
+            <a href="../public/index_gestaoderotas.html">Rotas</a>
+            <a href="../public/index_manutencao.html">Manutenção</a>
+            <a href="../public/index_relatorios.html">Relatórios</a>
+            <a href="../public/index_alertas.html">Alertas</a>
+        </div>
+    </div>
+</body>
+</html>
