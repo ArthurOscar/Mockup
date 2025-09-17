@@ -1,3 +1,39 @@
+<?php
+
+include '../includes/db.php';
+
+session_start();
+
+if (isset($_GET['logout'])) {
+  session_destroy();
+  header("Location: login.php");
+  exit;
+}
+
+$mensagem = "";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $nome = $_POST["nome"] ?? "";
+  $senha = $_POST["senha"] ?? "";
+
+  $stmt = $conn->prepare("SELECT id_usuario, nome, email, senha FROM usuarios WHERE nome=? AND senha=?");
+  $stmt->bind_param("ss", $nome, $senha);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $dados = $result->fetch_assoc();
+  $stmt->close();
+
+  if ($dados) {
+    $_SESSION["user_id"] = $dados["id"];
+    $_SESSION["user"] = $dados["user"];
+    header("Location: read.php?user=$_SESSION[user]");
+    exit;
+  } else {
+    $msg = "Usuário ou senha incorretos!";
+  }
+}
+
+?>
+
 <html lang="en">
 
 <head>
