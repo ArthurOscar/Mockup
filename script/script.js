@@ -40,28 +40,6 @@ function trocar_menu() {
     menuAberto = !menuAberto;
 }
 
-/* Login */
-const paginaLogin = window.location.pathname
-const paginaLoginName = paginaLogin.substring(paginaLogin.lastIndexOf('/') + 1)
-
-if (paginaLoginName === 'index_telaDeLogin.html') {
-    function enviarDados() {
-        const nomeUsuario = document.getElementById('usuario_login').value;
-        localStorage.setItem('nomeUsuario', nomeUsuario);
-        let validacao_login = true
-        let usuario = document.getElementById('usuario_login').value
-        let senha = document.getElementById('senha_login').value
-        if (usuario != 'admin' || senha != 'admin' || usuario === '' || senha === '') {
-            alert('Insira corretamento os campos de login')
-            validacao_login = false
-        }
-        if (validacao_login === true) {
-            window.location.href = '../public/index_gestaoderotas.html'
-        }
-    }
-}
-
-
 /* Rotas */
 const paginaRotas = window.location.pathname
 const paginaRotasName = paginaRotas.substring(paginaRotas.lastIndexOf('/') + 1)
