@@ -1,30 +1,36 @@
 <?php
 
-include '../includes/db.php';
+include '../db.php';
 
 session_start();
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout']) && $_GET['logout'] == '1') {
   session_destroy();
-  header("Location: login.php");
+  header("Location: index.php");
+  exit;
+}
+
+if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
+  header("Location: index_dashboard.php");
   exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $nome = $_POST["nome"] ?? "";
+  $email = $_POST["email"] ?? "";
   $senha = $_POST["senha"] ?? "";
 
-  $stmt = $conn->prepare("SELECT id_usuario, nome, email, senha FROM usuario WHERE nome=?");
-  $stmt->bind_param("s", $nome);
+  $stmt = $conn->prepare("SELECT id_usuario, nome, email, senha FROM usuario WHERE email=? AND senha=?");
+  $stmt->bind_param("ss", $email, $senha);
   $stmt->execute();
   $result = $stmt->get_result();
   $dados = $result->fetch_assoc();
   $stmt->close();
 
-  if ($dados && password_verify($senha, $dados["senha"])) {
+  if ($dados) {
     $_SESSION["usuario_id"] = $dados["id_usuario"];
     $_SESSION["usuario"] = $dados["nome"];
-    header("Location: index_dashboard.php?usuario=$_SESSION[usuario]");
+    $_SESSION["logado"] = true;
+    header("Location: index_dashboard.php");
     exit;
   } else {
     echo "<script>alert('Usuário ou senha incorretos!')</script>";
@@ -53,13 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <main>
     <div class="frase_introdutoria">
       <img src="../assects/TremVida_slogan.png" alt="">
-      <p id="frase_introdutoriaText">Fazendo das ródovias
+      <p id="frase_introdutoriaText">Fazendo das rodovias
         em vias da vida</p>
     </div>
     <div class="login">
       <form method="POST">
         <strong id="texto_login">Fazer Login:</strong><br>
-        <input type="text" id="usuario_login" name="nome" placeholder="Usuário">
+        <input type="text" id="usuario_login" name="email" placeholder="Email">
         <div class="senha">
           <input type="password" id="senha_login" name="senha" placeholder="Senha">
           <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"

@@ -44,7 +44,7 @@ function trocar_menu() {
 const paginaRotas = window.location.pathname
 const paginaRotasName = paginaRotas.substring(paginaRotas.lastIndexOf('/') + 1)
 
-if (paginaRotasName === 'index_gestaoderotas.html') {
+if (paginaRotasName === 'index_gestaoderotas.php') {
     let imgFerrovia1 = "../assects/seta_ferrovia.png"
     let imgFerrovia2 = "../assects/seta_ferrovia2.png"
     let ferroviaAberto = false
@@ -94,7 +94,7 @@ if (paginaRotasName === 'index_gestaoderotas.html') {
 const paginaManutencao = window.location.pathname
 const paginaManutencaoName = paginaManutencao.substring(paginaManutencao.lastIndexOf('/') + 1)
 
-if (paginaManutencaoName === 'index_manutencao.html') {
+if (paginaManutencaoName === 'index_manutencao.php') {
     let imgFerrovia1 = "../assects/seta_ferrovia.png"
     let imgFerrovia2 = "../assects/seta_ferrovia2.png"
     let ferroviaAberto = false
@@ -130,7 +130,7 @@ if (paginaManutencaoName === 'index_manutencao.html') {
 const paginaRelatorios = window.location.pathname
 const paginaRelatoriosName = paginaRelatorios.substring(paginaRelatorios.lastIndexOf('/') + 1)
 
-if (paginaRelatoriosName === 'index_relatorios.html') {
+if (paginaRelatoriosName === 'index_relatorios.php') {
     let imgFerrovia1 = "../assects/seta_ferrovia.png"
     let imgFerrovia2 = "../assects/seta_ferrovia2.png"
     let ferroviaAberto = false

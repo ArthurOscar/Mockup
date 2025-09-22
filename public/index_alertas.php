@@ -1,3 +1,16 @@
+<?php
+
+include '../db.php';
+session_start();
+
+if(!isset($_SESSION['logado'])){
+    session_destroy();
+    header("Location: index.php");
+    exit;
+}
+
+?>
+
 <html lang="en">
 
 <head>
@@ -19,10 +32,10 @@
     </nav>
     <div id="menu_lateral" class="menu_lateral">
         <div id="menu_links">
-            <a href="../public/index_gestaoderotas.html">Rotas</a>
-            <a href="../public/index_manutencao.html">Manutenção</a>
-            <a href="../public/index_relatorios.html">Relatórios</a>
-            <a href="../public/index_alertas.html">Alertas</a>
+            <a href="../public/index_gestaoderotas.php">Rotas</a>
+            <a href="../public/index_manutencao.php">Manutenção</a>
+            <a href="../public/index_relatorios.php">Relatórios</a>
+            <a href="../public/index_alertas.php">Alertas</a>
         </div>
     </div>
    <main>

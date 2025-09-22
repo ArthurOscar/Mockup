@@ -1,18 +1,26 @@
 <?php
 
-include '../includes/db.php';
+session_start();
+
+include '../db.php';
+
+if(!isset($_SESSION['logado'])){
+    session_destroy();
+    header("Location: index.php");
+    exit;
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST["email"] ?? "";
     $nome = $_POST["nome"] ?? "";
     $senha = $_POST["senha"] ?? "";
-    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO usuario(nome, email, senha) VALUES (?,?,?)");
-    $stmt->bind_param("sss", $nome, $email, $senha_hash);
+    $stmt->bind_param("sss", $nome, $email, $senha);
 
     if ($stmt->execute()) {
-        header("Location: index_dashboard.php?user=$_SESSION[user]");
+        header("Location: index_dashboard.php");
         exit;
     } else {
         echo "Erro: " . $stmt->error;
@@ -44,12 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </nav>
     <div id="menu_lateral" class="menu_lateral">
         <div id="menu_links">
-            <a href="../public/index_gestaoderotas.html">Rotas</a>
-            <a href="../public/index_manutencao.html">Manutenção</a>
-            <a href="../public/index_relatorios.html">Relatórios</a>
-            <a href="../public/index_alertas.html">Alertas</a>
+            <a href="../public/index_gestaoderotas.php">Rotas</a>
+            <a href="../public/index_manutencao.php">Manutenção</a>
+            <a href="../public/index_relatorios.php">Relatórios</a>
+            <a href="../public/index_alertas.php">Alertas</a>
         </div>
     </div>
+    <br>
     <div class="login">
         <form method="POST">
             <strong id="texto_login">Novo Cadastro:</strong><br>
@@ -57,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" id="usuario_login" name="nome" placeholder="Usuário">
             <div class="senha">
                 <input type="password" id="senha_login" name="senha" placeholder="Senha">
-                <button id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"
+                <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"
                         src="../assects/show.png"></button>
             </div>
             <button type="submit" id="enviarDados">Cadastrar</button>
