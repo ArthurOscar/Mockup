@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $email = $_POST["email"] ?? "";
   $senha = $_POST["senha"] ?? "";
 
-  $stmt = $conn->prepare("SELECT id_usuario, nome, email, senha FROM usuario WHERE email=? AND senha=?");
+  $stmt = $conn->prepare("SELECT id_usuario, nome, email, senha, data_nascimento, descricao, funcao FROM usuarios WHERE email=? AND senha=?");
   $stmt->bind_param("ss", $email, $senha);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -29,6 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if ($dados) {
     $_SESSION["usuario_id"] = $dados["id_usuario"];
     $_SESSION["usuario"] = $dados["nome"];
+    $_SESSION["data_nascimento"] = $dados["data_nascimento"];
+    $_SESSION["email"] = $dados["email"];
+    $_SESSION["senha"] = $dados["senha"];
+    $_SESSION["funcao"] = $dados["funcao"];
     $_SESSION["logado"] = true;
     header("Location: index_dashboard.php");
     exit;

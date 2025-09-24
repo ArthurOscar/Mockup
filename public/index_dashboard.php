@@ -2,6 +2,7 @@
 
 include '../db.php';
 session_start();
+echo "$_SESSION{'funcao'}";
 
 if(!isset($_SESSION['logado'])){
     session_destroy();
