@@ -1,34 +1,16 @@
 <?php
+include '../includes/db.php';
+include '../src/auth.php';
+include '../src/user.php';
 
 session_start();
 
-include '../db.php';
-
-if(!isset($_SESSION['logado'])){
-    session_destroy();
-    header("Location: index.php");
-    exit;
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $user = new User($conn);
+    
+    $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
+    header("location: index.php");
 }
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST["email"] ?? "";
-    $nome = $_POST["nome"] ?? "";
-    $senha = $_POST["senha"] ?? "";
-
-    $stmt = $conn->prepare("INSERT INTO usuario(nome, email, senha) VALUES (?,?,?)");
-    $stmt->bind_param("sss", $nome, $email, $senha);
-
-    if ($stmt->execute()) {
-        header("Location: index_dashboard.php");
-        exit;
-    } else {
-        echo "Erro: " . $stmt->error;
-    }
-    $stmt->close();
-    $conn->close();
-}
-
 
 ?>
 
@@ -56,19 +38,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
             <a href="../public/index_alertas.php">Alertas</a>
+            
         </div>
     </div>
     <br>
     <div class="login">
         <form method="POST">
             <strong id="texto_login">Novo Cadastro:</strong><br>
-            <input type="text" id="usuario_login" name="email" placeholder="Email">
-            <input type="text" id="usuario_login" name="nome" placeholder="Usuário">
+            <input type="text" id="usuario_login" name="nome" maxlength="100" placeholder="Usuário">
+            <input type="text" id="usuario_login" name="email" maxlength="250" placeholder="Email">
             <div class="senha">
-                <input type="password" id="senha_login" name="senha" placeholder="Senha">
+                <input type="password" maxlength="100" id="senha_login" name="senha" placeholder="Senha">
                 <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"
                         src="../assects/show.png"></button>
             </div>
+            <select name="funcao">
+                <option value="Admin">Administrador</option>
+                <option value="Funcionário">Funcionário</option>
+            </select>
             <button type="submit" id="enviarDados">Cadastrar</button>
         </form>
     </div>

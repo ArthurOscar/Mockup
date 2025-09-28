@@ -1,14 +1,18 @@
 <?php
+include '../includes/db.php';
+include '../src/auth.php';
+include '../src/user.php';
 
-include '../db.php';
 session_start();
-echo "$_SESSION{'funcao'}";
+$auth = new Auth();
+$user = new User($conn);
 
-if(!isset($_SESSION['logado'])){
-    session_destroy();
-    header("Location: index.php");
-    exit;
+if (!$auth->isLoggedIn()){
+    header("location: login.php");
+    exit();
 }
+
+$currentUser = $user -> getUserById($_SESSION['user_id']);
 
 ?>
 
@@ -36,7 +40,7 @@ if(!isset($_SESSION['logado'])){
             <a href="../public/index_relatorios.php">Relatórios</a>
             <a href="../public/index_alertas.php">Alertas</a>
             <br><br><br>
-            <a href="index.php?logout=1">Sair</a>
+            <a href="logout.php">Sair</a>
         </div>
     </div>
 </body>

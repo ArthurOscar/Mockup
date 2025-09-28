@@ -165,13 +165,6 @@ main {
     border-style: none;
 }
 
-#esqueceu_senha {
-    font-size: 20px;
-    text-decoration: none;
-    color: #dddfe3;
-    margin-left: 10px;
-}
-
 #olho {
     background-color: #dddfe3;
     width: 70px;
@@ -401,34 +394,5 @@ main {
     background-color: #187f4c;
     border-radius: 30px;
     color: #dddfe3;
-    text-align: center;
-}
-
-/*Recuperar Senha*/
-.titulosenha {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 7%;
-    margin-left: 7%;
-    font-size: 1.8rem;
-}
-
-.frasesenha {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 5%;
-    margin-left: 7%;
-    text-align: center;
-    text-align: justify;
-    width: 350px;
-}
-
-.email {
-    margin-top: 5%;
-    text-align: center;
-    font-size: large;
-}
-
-.recuperarsenha {
-    color: #187f4c;
     text-align: center;
 }
