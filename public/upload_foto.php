@@ -83,8 +83,8 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     <main class="perfil-container">
         <h2>Alterar foto de perfil:</h2><br>
         <form action="upload_foto.php" method="POST" enctype="multipart/form-data">
-            <input type="file" class="foto" name="foto_perfil" accept="image/*" required>
-            <button class="foto" type="submit">Enviar Foto</button>
+            <input type="file" class="foto" name="foto_perfil" accept="image/*" required><br><br>
+            <button class="foto" type="submit">Enviar Foto</button><br><br
         </form>
         <a class="foto" href="index_dashboard.php">Voltar</a>
     </main>
