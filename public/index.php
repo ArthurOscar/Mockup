@@ -5,16 +5,16 @@ include '../src/user.php';
 
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $user = new User($conn);
-    $auth = new Auth();
-    $loggedInUser = $user->login($_POST['email'], $_POST['senha']);
-    if($loggedInUser){
-        $auth -> loginUser($loggedInUser);
-        header("location: index_dashboard.php");
-    } else{
-        echo "<script>alert('Login Falhou!')</script>";
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $user = new User($conn);
+  $auth = new Auth();
+  $loggedInUser = $user->login($_POST['email'], $_POST['senha']);
+  if ($loggedInUser) {
+    $auth->loginUser($loggedInUser);
+    header("location: index_dashboard.php");
+  } else {
+    echo "<script>alert('Login Falhou!')</script>";
+  }
 }
 
 ?>

@@ -7,16 +7,17 @@ session_start();
 $auth = new Auth();
 $user = new User($conn);
 
-if (!$auth->isLoggedIn()){
+if (!$auth->isLoggedIn()) {
     header("location: login.php");
     exit();
 }
 
-$currentUser = $user -> getUserById($_SESSION['user_id']);
+$currentUser = $user->getUserById($_SESSION['user_id']);
 
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +25,15 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
 </head>
+
 <body>
     <nav class="navbar">
+        <div class="perfil">
+            <a href="index_perfil.php">
+                <img src="../uploads/<?php echo htmlspecialchars($currentUser['foto_perfil']); ?>"
+                    alt="foto de perfil">
+            </a>
+        </div>
         <div class="logo">
             <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
@@ -35,6 +43,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     </nav>
     <div id="menu_lateral" class="menu_lateral">
         <div id="menu_links">
+            <a href="../public/index_dashboard.php">Início</a>
             <a href="../public/index_gestaoderotas.php">Rotas</a>
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
@@ -44,4 +53,5 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
         </div>
     </div>
 </body>
+
 </html>

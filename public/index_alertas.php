@@ -7,12 +7,12 @@ session_start();
 $auth = new Auth();
 $user = new User($conn);
 
-if (!$auth->isLoggedIn()){
+if (!$auth->isLoggedIn()) {
     header("location: login.php");
     exit();
 }
 
-$currentUser = $user -> getUserById($_SESSION['user_id']);
+$currentUser = $user->getUserById($_SESSION['user_id']);
 
 ?>
 
@@ -28,6 +28,12 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
 
 <body>
     <nav class="navbar">
+        <div class="perfil">
+            <a href="index_perfil.php">
+                <img src="../uploads/<?php echo htmlspecialchars($currentUser['foto_perfil']); ?>"
+                    alt="foto de perfil">
+            </a>
+        </div>
         <div class="logo">
             <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
@@ -37,6 +43,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     </nav>
     <div id="menu_lateral" class="menu_lateral">
         <div id="menu_links">
+            <a href="../public/index_dashboard.php">Início</a>
             <a href="../public/index_gestaoderotas.php">Rotas</a>
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
@@ -45,7 +52,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
             <a href="logout.php">Sair</a>
         </div>
     </div>
-   <main>
+    <main>
         <div class="flex-Alertas">
             <div class="alertas">
                 <p>Alertas</p>

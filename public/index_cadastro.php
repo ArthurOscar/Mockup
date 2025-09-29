@@ -9,8 +9,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $user = new User($conn);
     
     $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
-    header("location: index.php");
+    header("location: index_dashboard.php");
 }
+
+$currentUser = $user -> getUserById($_SESSION['user_id']);
 
 ?>
 
@@ -25,6 +27,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 <body>
     <nav class="navbar">
+        <div class="perfil">
+            <a href="index_perfil.php">
+                <img src="../uploads/<?php echo htmlspecialchars($currentUser['foto_perfil']); ?>"
+                    alt="foto de perfil">
+            </a>
+        </div>
         <div class="logo">
             <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
@@ -34,11 +42,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     </nav>
     <div id="menu_lateral" class="menu_lateral">
         <div id="menu_links">
+            <a href="../public/index_dashboard.php">Início</a>
             <a href="../public/index_gestaoderotas.php">Rotas</a>
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
             <a href="../public/index_alertas.php">Alertas</a>
-            
+            <br><br><br>
+            <a href="logout.php">Sair</a>
         </div>
     </div>
     <br>

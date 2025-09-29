@@ -16,9 +16,9 @@ INSERT INTO Ordem_Servicos (equipe_responsavel, data_execucao, resultado) VALUES
 ('Equipe Elétrica', '2025-09-22', 0);
 
 INSERT INTO Usuarios (nome, email, senha, funcao) VALUES
-('João Silva', 'joao.silva@email.com', 'senha123', 'Admin'),
-('Maria Oliveira', 'maria.oliveira@email.com', 'senha456', 'Funcionário'),
-('Carlos Souza', 'carlos.souza@email.com', 'senha789', 'Admin');
+('João Silva', 'joao.silva@email.com', '$2y$10$sUBsgNUpFlInCZYnDcAv8OmTpKjdBI6EPH2RwJ/6rAvuECzKYaQOm', 'Admin'),
+('Maria Oliveira', 'maria.oliveira@email.com', '$2y$10$YpjY0YgVnZ1658m09oXB5.zx0RDPltW3dy4ZGCWGvAzbhHgZ3dLiC', 'Funcionário'),
+('Carlos Souza', 'carlos.souza@email.com', '$2y$10$QLPOKjTL9O9.sFuVDbSdSucqHxB6wlcl/Eg3D99qKg9q3GMTMqoiy', 'Admin');
 
 INSERT INTO Alertas (tipo_alerta, mensagem, prioridade, id_usuario_alerta, data_envio) VALUES
 ('Segurança', 'Sensor de vibração acima do limite seguro.', 'Alta', 2, '2025-09-23 14:00:00'),

@@ -4,16 +4,13 @@ include '../src/auth.php';
 include '../src/user.php';
 
 session_start();
-$auth = new Auth();
-$user = new User($conn);
 
-if (!$auth->isLoggedIn()){
-    header("location: login.php");
-    exit();
-}
+if (isset($_SESSION['user_id'])) {
+    $user = new User($conn);
+    $currentUser = $user->getUserById($_SESSION['user_id']);
+};
 
-$currentUser = $user -> getUserById($_SESSION['user_id']);
-
+echo "<link rel='stylesheet' href='../style/style.css'>";
 ?>
 
 <html lang="en">
@@ -21,8 +18,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manutenção</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <title>Perfil</title>
     <script src="../script/script.js"></script>
 </head>
 
@@ -52,32 +48,25 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
             <a href="logout.php">Sair</a>
         </div>
     </div>
-    <main>
-        <div id="saudacao">
-            <p>Monitoramento de Manutenção</del></p>
-            <div id="pesquisar_completo">
-                <input type="text" id="pesquisar_rota" maxlength="4" placeholder="PESQUISAR ROTAS">
-                <input type="submit" id="buscar_botao" value="Buscar">
-            </div>
-        </div>
-        <hr>
-        <div id="ferrovias">
-            <div id="ferrovia" onclick="ferrovia()">
-                <img id="seta" src="../assects/seta_ferrovia.png" alt="">
-                <p>Ferrovia Sul</p>
-            </div>
-            <div id="ferrovia_Aberto" class="ferrovia_Aberto">
-                <div id="menu_rotas">
-                    <div class="rota">
-                        <p id="numero">0101</p>
-                        <p id="rota_texto">*Arrumar trilho da rota*</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
-    </main>
+    <br>
+    <?php
+    echo "<div class='perfil-container'>";
+    echo "<h2>Informações:</h2><br>";
+    $id = $_SESSION['user_id'];
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id_usuario = ?");
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    if ($result) {
+        echo "<div class='info-table'>";
+        echo "<div class='info-row'><span class='info-label'>Nome:</span> <span class='info-value'>{$result['nome']}</span></div>";
+        echo "<div class='info-row'><span class='info-label'>Email:</span> <span class='info-value'>{$result['email']}</span></div>";
+        echo "<div class='info-row'><span class='info-label'>Função:</span> <span class='info-value'>{$result['funcao']}</span></div>";
+        echo "</div>";
+    }
+    echo "</div>";
+    ?>
+    <a href="upload_foto.php" class="foto">Trocar Foto de Perfil</a>
 </body>
 
 </html>

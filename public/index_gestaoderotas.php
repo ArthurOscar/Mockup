@@ -28,6 +28,12 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
 
 <body>
     <nav class="navbar">
+        <div class="perfil">
+            <a href="index_perfil.php">
+                <img src="../uploads/<?php echo htmlspecialchars($currentUser['foto_perfil']); ?>"
+                    alt="foto de perfil">
+            </a>
+        </div>
         <div class="logo">
             <img src="../assects/Logo_dashboard.png" onclick="reload()">
         </div>
@@ -37,6 +43,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     </nav>
     <div id="menu_lateral" class="menu_lateral">
         <div id="menu_links">
+            <a href="../public/index_dashboard.php">Início</a>
             <a href="../public/index_gestaoderotas.php">Rotas</a>
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
@@ -46,10 +53,12 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
         </div>
     </div>
     <main>
-        <div id="saudacao"><!-- Nome do usúario --></div>
-        <div id="pesquisar_completo">
-            <input type="text" id="pesquisar_rota" maxlength="4" placeholder="PESQUISAR ROTAS">
-            <input type="submit" id="buscar_botao" value="Buscar">
+        <div id="saudacao">
+            <p>Rotas</del></p>
+            <div id="pesquisar_completo">
+                <input type="text" id="pesquisar_rota" maxlength="4" placeholder="PESQUISAR ROTAS">
+                <input type="submit" id="buscar_botao" value="Buscar">
+            </div>
         </div>
         <hr>
         <div id="ferrovias">
