@@ -446,7 +446,6 @@ main {
 
 /* Foto de perfil */
 .foto {
-    display: inline-block;
     padding: 10px 20px;
     background-color: #187f4c;
     color: white;
@@ -454,5 +453,5 @@ main {
     border-radius: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin: 10px;
+    justify-content: center;
 }

@@ -23,6 +23,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <script src="../script/script.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="../assects/cadastro.png">
 </head>
 
 <body>

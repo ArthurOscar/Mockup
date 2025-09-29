@@ -24,6 +24,7 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     <title>Gestão de rotas</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="../assects/rota.png">
 </head>
 
 <body>

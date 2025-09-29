@@ -20,6 +20,7 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <script src="../script/script.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="../assects/perfil.png">
 </head>
 
 <body>
@@ -62,11 +63,11 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
         echo "<div class='info-row'><span class='info-label'>Nome:</span> <span class='info-value'>{$result['nome']}</span></div>";
         echo "<div class='info-row'><span class='info-label'>Email:</span> <span class='info-value'>{$result['email']}</span></div>";
         echo "<div class='info-row'><span class='info-label'>Função:</span> <span class='info-value'>{$result['funcao']}</span></div>";
-        echo "</div>";
+        echo "</div><br>";
     }
+    echo "<a href='upload_foto.php' class='foto'>Trocar Foto de Perfil</a>";
     echo "</div>";
     ?>
-    <a href="upload_foto.php" class="foto">Trocar Foto de Perfil</a>
 </body>
 
 </html>

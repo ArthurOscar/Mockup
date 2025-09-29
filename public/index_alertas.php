@@ -24,6 +24,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
     <title>Alertas</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="../assects/alerta.png">
 </head>
 
 <body>
