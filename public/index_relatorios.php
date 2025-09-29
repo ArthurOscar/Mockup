@@ -49,6 +49,9 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
             <a href="../public/index_alertas.php">Alertas</a>
+            <?php if ($currentUser['funcao'] === 'Admin'): ?>
+                <a href="../public/index_cadastro.php">Cadastro</a>
+            <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>
         </div>

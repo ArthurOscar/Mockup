@@ -52,6 +52,7 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload de foto</title>
     <link rel="shortcut icon" type="image/ico" href="../assects/foto.png">
+    <script src="../script/script.js"></script>
 </head>
 
 <body>
@@ -76,6 +77,9 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
             <a href="../public/index_alertas.php">Alertas</a>
+            <?php if ($currentUser['funcao'] === 'admin'): ?>
+                <a href="../public/index_cadastro.php">Cadastro</a>
+            <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>
         </div>

@@ -4,15 +4,24 @@ include '../src/auth.php';
 include '../src/user.php';
 
 session_start();
+$user = new User($conn);
+$currentUser = $user -> getUserById($_SESSION['user_id']);
+
+if($currentUser["funcao"] === "Funcionário"){
+    header("location: index_dashboard.php");
+    exit();
+}
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $user = new User($conn);
-    
+    if($_POST['nome'] == "" || $_POST['email'] == "" || $_POST['senha'] == "" || $_POST['funcao'] == ""){
+        echo "<script>alert('Preencha todos os campos!')</script>";
+        header("Refresh:0");
+        exit();
+    };
     $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
     header("location: index_dashboard.php");
 }
 
-$currentUser = $user -> getUserById($_SESSION['user_id']);
 
 ?>
 
@@ -48,6 +57,9 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
             <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_relatorios.php">Relatórios</a>
             <a href="../public/index_alertas.php">Alertas</a>
+            <?php if ($currentUser['funcao'] === 'Admin'): ?>
+                <a href="../public/index_cadastro.php">Cadastro</a>
+            <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>
         </div>
@@ -63,7 +75,8 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
                 <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"
                         src="../assects/show.png"></button>
             </div>
-            <select name="funcao">
+            <select name="funcao" id="usuario_login" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">
+                <option value="">Função</option>
                 <option value="Admin">Administrador</option>
                 <option value="Funcionário">Funcionário</option>
             </select>
