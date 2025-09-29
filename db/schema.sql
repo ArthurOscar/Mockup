@@ -28,8 +28,8 @@ id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
 email VARCHAR(250) NOT NULL UNIQUE,
 senha VARCHAR(100) NOT NULL,
-data_nascimento DATE NOT NULL,
-descricao VARCHAR(255) NOT NULL
+funcao ENUM('Admin','Funcionário'),
+foto_perfil VARCHAR(255) DEFAULT('default.jpg')
 );
 
 CREATE TABLE Alertas (

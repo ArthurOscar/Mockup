@@ -199,21 +199,3 @@ if (paginaRelatoriosName === 'index_relatorios.php') {
         document.getElementById('seta').src = imgFerrovia1;
     };
 }
-
-/* Recuperar Senha */
-const paginaSenha = window.location.pathname
-const paginaSenhaName = paginaSenha.substring(paginaSenha.lastIndexOf('/') + 1)
-
-if (paginaSenhaName === 'recuperar_senha.html') {
-    window.onload = () => {
-        document.getElementById('enviarDados').style.width = '80%'
-    }
-    function recuperarSenha() {
-        user = document.getElementById('user').value
-        if (user === '') {
-            alert('Inseria o campo corretamente')
-        } else {
-            window.location.href = 'index_telaDeLogin.html'
-        }
-    }
-}

@@ -17,18 +17,32 @@ body {
     background-color: black;
     width: 100%;
     height: 100px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    align-content: center;
+    padding: 0 15px;
+}
+
+.menu_dashboard {
+    cursor: pointer;
 }
 
 .logo {
     width: 100%;
-    text-align: center;
 }
 
 .logo img {
     width: 100px;
     padding: 10px;
+}
+
+.perfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    cursor: pointer;
 }
 
 main {
@@ -163,13 +177,6 @@ main {
     height: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-style: none;
-}
-
-#esqueceu_senha {
-    font-size: 20px;
-    text-decoration: none;
-    color: #dddfe3;
-    margin-left: 10px;
 }
 
 #olho {
@@ -404,31 +411,48 @@ main {
     text-align: center;
 }
 
-/*Recuperar Senha*/
-.titulosenha {
+/* Perfil */
+
+.perfil-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.info-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-row {
+    background: #eaeaea;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Foto de perfil */
+.foto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #187f4c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 7%;
-    margin-left: 7%;
-    font-size: 1.8rem;
-}
-
-.frasesenha {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 5%;
-    margin-left: 7%;
-    text-align: center;
-    text-align: justify;
-    width: 350px;
-}
-
-.email {
-    margin-top: 5%;
-    text-align: center;
-    font-size: large;
-}
-
-.recuperarsenha {
-    color: #187f4c;
-    text-align: center;
+    margin: 10px;
 }
