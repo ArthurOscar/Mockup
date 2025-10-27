@@ -2,10 +2,15 @@
 include '../includes/db.php';
 include '../src/auth.php';
 include '../src/user.php';
+include '../src/sensores.php';
 
 session_start();
 $user = new User($conn);
+<<<<<<< HEAD
 $auth = new Auth();
+=======
+$sensor = new Sensores($conn);
+>>>>>>> DashBoard
 
 if (!$auth->isLoggedIn()) {
     header("location: index.php");
@@ -56,6 +61,31 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
             <a href="logout.php">Sair</a>
         </div>
     </div>
+    <main>
+        <div class="dashboard">
+            <div class="dashboard-title">
+                <h1>DashBoard</h1>
+            </div>
+            <div class="section-dashboard">
+                <div class="temp-dashboard">
+                    <h2>Temperatura:</h2>
+                    <p><?php echo $sensor->sensor("Temperatura"); ?>ºC</p>
+                </div>
+                <div class="umida-dashboard">
+                    <h2>Umidade:</h2>
+                    <p><?php echo $sensor->sensor("Umidade"); ?>%</p>
+                </div>
+                <div class="lux-dashboard">
+                    <h2>Luminosidade:</h2>
+                    <p><?php echo $sensor->sensor("Luminosidade"); ?> Lux</p>
+                </div>
+                <div class="presenca-dashboard">
+                    <h2>Localização:</h2>
+                    <p>O trem está no posto: <?php echo $sensor->localizacao(); ?></p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
