@@ -1,12 +1,12 @@
-** API utilizada: **
+# API utilizada:
 - Abstract API
 - Usada para validar emails, verificar seu domínio, e várias outras propriedades do email
 
-** EndPoint: **
+# EndPoint:
 - https://emailreputation.abstractapi.com/v1/
 - End point com api do email -> https://emailreputation.abstractapi.com/v1/?api_key=8ab3a072073f4018b6c30d31a6345052&email=(email)
 
-** Exemplo de resposta: **
+# Exemplo de resposta:
 - A resposta dada em json, com várias linhas com funções para chamadas diferentes:
 {
     "email_address": "arthur_o_soares@estudante.sesisenai.org.br",
@@ -66,7 +66,7 @@
     }
 }
 
- ** Rodar ela: **
+# Rodar ela:
  - Somente colocar este código para rodar:
    $ch = curl_init();
    curl_setopt($ch, CURLOPT_URL, 'https://emailreputation.abstractapi.com/v1/?api_key=8ab3a072073f4018b6c30d31a6345052&email=arthur_o_soares@estudante.sesisenai.org.br');
@@ -77,7 +77,7 @@
    echo $data;
 - Não achei uma limitação pro meu projeto aplicado, mas pode ser uma delas, o plano gratuito, que não aceita muitos requisições por segundo, algo resolvido no plano pago.
 
-** Teste **
+# Testes
 - Email válido:
 <img width="342" height="655" alt="image" src="https://github.com/user-attachments/assets/11353851-0a1a-4f8c-9607-f35e1414cd84" />
 <img width="1418" height="546" alt="image" src="https://github.com/user-attachments/assets/04379679-cc58-4906-8911-a4539906a580" />
