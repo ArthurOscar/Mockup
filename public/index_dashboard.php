@@ -4,11 +4,11 @@ include '../src/auth.php';
 include '../src/user.php';
 
 session_start();
-$auth = new Auth();
 $user = new User($conn);
+$auth = new Auth();
 
 if (!$auth->isLoggedIn()) {
-    header("location: login.php");
+    header("location: index.php");
     exit();
 }
 

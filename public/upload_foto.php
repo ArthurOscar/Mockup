@@ -1,11 +1,14 @@
 <?php
 include '../includes/db.php';
 include '../src/user.php';
+include '../src/auth.php';
 
 session_start();
+$auth = new Auth();
+$user = new User($conn);
 
-if (!isset($_SESSION['user_id'])) {
-    header("location: login.php");
+if (!$auth->isLoggedIn()){
+    header("location: index.php");
     exit();
 }
 

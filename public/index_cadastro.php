@@ -2,10 +2,18 @@
 include '../includes/db.php';
 include '../src/auth.php';
 include '../src/user.php';
+include '../src/apiEmail.php';
 
 session_start();
 $user = new User($conn);
+$auth = new Auth();
 $currentUser = $user -> getUserById($_SESSION['user_id']);
+$verifyEmail = new Email();
+
+if (!$auth->isLoggedIn()) {
+    header("location: index.php");
+    exit();
+}
 
 if($currentUser["funcao"] === "Funcionário"){
     header("location: index_dashboard.php");
@@ -17,7 +25,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         echo "<script>alert('Preencha todos os campos!')</script>";
         header("Refresh:0");
         exit();
-    };
+    } else if ($verifyEmail->EmailVerify($_POST['email']) == false) {
+        echo "<script>alert('Email inválido!')</script>";
+        header("Refresh:0");
+        exit();
+    }
     $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
     header("location: index_dashboard.php");
 }

@@ -8,7 +8,7 @@ $auth = new Auth();
 $user = new User($conn);
 
 if (!$auth->isLoggedIn()){
-    header("location: login.php");
+    header("location: index.php");
     exit();
 }
 

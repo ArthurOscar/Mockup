@@ -4,12 +4,15 @@ include '../src/auth.php';
 include '../src/user.php';
 
 session_start();
+$auth = new Auth();
+$user = new User($conn);
 
-if (isset($_SESSION['user_id'])) {
-    $user = new User($conn);
-    $currentUser = $user->getUserById($_SESSION['user_id']);
-};
+if (!$auth->isLoggedIn()){
+    header("location: index.php");
+    exit();
+}
 
+$currentUser = $user -> getUserById($_SESSION['user_id']);
 echo "<link rel='stylesheet' href='../style/style.css'>";
 ?>
 

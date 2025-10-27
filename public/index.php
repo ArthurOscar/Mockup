@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<script>alert('Login Falhou!')</script>";
   }
 }
-
 ?>
 
 <html lang="en">
