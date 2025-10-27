@@ -5,22 +5,8 @@ Use TremVida;
 CREATE TABLE Sensores (
 id_sensor INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 tipo_sensor VARCHAR(100) NOT NULL,
-localizacao VARCHAR(100)
-);
-
-CREATE TABLE Leitura_Sensores (
-id_leitura INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-id_sensor_leitura INT,
-timestamp DATETIME,
-valor FLOAT,
-FOREIGN KEY (id_sensor_leitura) REFERENCES Sensores(id_sensor)
-);
-
-CREATE TABLE Ordem_Servicos (
-id_ordem INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-equipe_responsavel VARCHAR(100),
-data_execucao DATE,
-resultado BOOLEAN NOT NULL
+localizacao VARCHAR(100),
+valor FLOAT
 );
 
 CREATE TABLE Usuarios (
@@ -40,12 +26,4 @@ prioridade VARCHAR(20),
 id_usuario_alerta INT,
 data_envio DATETIME,
 FOREIGN KEY (id_usuario_alerta) REFERENCES Usuarios(id_usuario)
-);
-
-CREATE TABLE Analises (
-id_analise INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-mes_referencia DATE,
-eficiencia_energetica FLOAT,
-pontualidade FLOAT,
-custo_manutencao FLOAT
 );
