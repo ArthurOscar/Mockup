@@ -30,8 +30,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         header("Refresh:0");
         exit();
     }
+    // Registra o usuário
     $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
-    header("location: index_dashboard.php");
+    echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = 'index_dashboard.php';</script>";
 }
 
 

@@ -1,10 +1,12 @@
 <?php
 
-// Acesso local
-$servername = 'localhost';
-$username = 'root';
-$password = 'root';
-$dbname = 'TremVida';
+// Acesso local com config_example
+$config = include __DIR__ . '/config_example.php';
+
+$servername = $config['servername'];
+$username = $config['username'];
+$password = $config['password'];
+$dbname = $config['dbname'];
 
 try{
     $conn = new PDO("mysql: host=$servername;dbname=$dbname", $username, $password);

@@ -2,10 +2,20 @@
 
 class Email
 {
+    // Cria uma váriavel privada
+    private $apiUrl;
+
+    public function __construct()
+    {
+        // Carrega o arquivo de configuração
+        $config = include __DIR__ . '/../includes/config.php';
+        $this->apiUrl = $config['API_Key'];
+    }
+
     public function EmailVerify($email)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://emailreputation.abstractapi.com/v1/?api_key=8ab3a072073f4018b6c30d31a6345052&email=' . urlencode($email));
+        curl_setopt($ch, CURLOPT_URL, $this->apiUrl . urlencode($email));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         $data = curl_exec($ch);
