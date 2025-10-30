@@ -73,15 +73,12 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
             <div id="ferrovia_Aberto" class="ferrovia_Aberto">
                 <div id="menu_rotas">
                     <div class="rota">
-                        <p id="numero">0101</p>
-                        <p id="rota_texto">Sul / Centro</p>
+                        <p id="numero">S1 -> S2</p>
                     </div>
                     <div id="mapaStyle">
                         <img id="mapa_ferrovia" src="../assects/Mapa.PNG" alt="">
                         <div>
                             <p>Horário de partida: <u>08:20</u></p>
-                            <br>
-                            <p>Disponibilidade: <u>Seg a Seg</u></p>
                         </div>
                     </div>
                 </div>

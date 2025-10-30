@@ -1,5 +1,6 @@
 <?php
 
+// Classe destinada a pegar informações do banco de dados para o DashBoard
 class Sensores
 {
     private $conn;

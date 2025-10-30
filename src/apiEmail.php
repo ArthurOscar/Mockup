@@ -10,7 +10,9 @@ class Email
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         $data = curl_exec($ch);
         curl_close($ch);
+        // Decodifica a requisição que é dada em JSON
         $dado = json_decode($data, true);
+        // Verifica a validade do email pela API
         if (isset($dado["email_deliverability"]["status_detail"]) && $dado["email_deliverability"]["status_detail"] === "valid_email") {
             return true;
         } else {

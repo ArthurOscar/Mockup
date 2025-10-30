@@ -1,6 +1,7 @@
 <?php
 
 class User {
+    //Cria BD privada, difícil de ser comprometida
     private $conn;
 
     public function __construct($db){

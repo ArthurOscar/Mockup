@@ -221,7 +221,7 @@ main {
     font-weight: bold;
     margin-top: 7%;
     margin-left: 7%;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 #pesquisar_completo {
@@ -617,6 +617,14 @@ main {
     
     .temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
         width: 23%;
+    }
+}
+
+@media (min-width: 480px){
+    #imagem_menu {
+        width: 100px;
+        max-width: 80px;
+        top: 5px;
     }
 }
 
