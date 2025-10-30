@@ -11,6 +11,7 @@
 
 body {
     width: 100%;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -21,6 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    box-sizing: border-box;
 }
 
 .menu_dashboard {
@@ -34,6 +36,8 @@ body {
 .logo img {
     width: 100px;
     padding: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 .perfil img {
@@ -43,18 +47,21 @@ body {
     object-fit: cover;
     border: 2px solid white;
     cursor: pointer;
+    max-width: 100%;
 }
 
 main {
     background-color: white;
     max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
 }
 
 .menu_lateral {
     position: fixed;
     top: 0;
-    right: -50%;
-    width: 50%;
+    right: -80%;
+    width: 80%;
     height: 100%;
     background-color: #187f4c;
     display: flex;
@@ -68,7 +75,7 @@ main {
 .menu_lateral a {
     color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: end;
     margin-top: 15px;
@@ -87,13 +94,14 @@ main {
 }
 
 #imagem_menu {
-    width: 130px;
+    width: 100%;
     margin-left: 50%;
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 5px;
     z-index: 2000;
     cursor: pointer;
+    max-width: 40px;
 }
 
 /* Tela de Login */
@@ -105,27 +113,31 @@ main {
 
 .frase_introdutoria img {
     border-radius: 20px;
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 3/2;
 }
 
 #frase_introdutoriaText {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
 .login {
     background-color: #187f4c;
     color: #dddfe3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 40px;
-    border-radius: 20%;
+    font-size: 1.5rem;
+    border-radius: 20px;
     padding: 5%;
-    margin: 0 20px;
+    margin: 0 10px;
     align-items: center;
     justify-content: center;
     align-content: center;
     align-self: center;
+    box-sizing: border-box;
 }
 
 .login ::-webkit-input-placeholder {
@@ -137,39 +149,44 @@ main {
 
 #texto_login {
     margin-left: 10px;
-    font-size: 80%;
+    font-size: 1.2rem;
 }
 
 #usuario_login {
-    margin: 5px;
-    font-size: 30px;
+    margin: 5px 0;
+    font-size: 1rem;
     color: #94a0b7;
     background-color: #dddfe3;
     border-radius: 10px;
     width: 100%;
     height: 50px;
     border-style: none;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .senha {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 #senha_login {
-    margin: 5px;
-    font-size: 30px;
+    margin: 5px 0;
+    font-size: 1rem;
     color: #94a0b7;
     background-color: #dddfe3;
     border-radius: 10px;
     width: 100%;
     height: 50px;
     border-style: none;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 #enviarDados {
-    margin: 5px;
-    font-size: 30px;
+    margin: 5px 0;
+    font-size: 1.2rem;
     color: white;
     background-color: rgb(27, 77, 27);
     border-radius: 10px;
@@ -177,18 +194,25 @@ main {
     height: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-style: none;
+    cursor: pointer;
 }
 
 #olho {
     background-color: #dddfe3;
-    width: 70px;
+    width: 60px;
     border-style: none;
-    border-radius: 20px;
+    border-radius: 10px;
     height: 50px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 #olho img {
-    width: 100%;
+    width: 30px;
+    height: auto;
 }
 
 /* Gestão de rotas */
@@ -197,7 +221,7 @@ main {
     font-weight: bold;
     margin-top: 7%;
     margin-left: 7%;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 #pesquisar_completo {
@@ -205,22 +229,27 @@ main {
     border-style: none;
     border-radius: 30px;
     background-color: #187f4c;
-    width: 77%;
-    padding: 2%;
+    width: 86%;
+    padding: 3%;
     display: flex;
     color: #dddfe3;
     justify-content: space-between;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 #pesquisar_rota {
     color: #dddfe3;
-    width: 80%;
+    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
     border-style: none;
     border-radius: 30px;
     background-color: #187f4c;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 
@@ -229,20 +258,21 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width: 100%;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 #buscar_botao {
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    width: 10rem;
+    width: 100%;
     height: 3rem;
     font-size: 1.2rem;
     border-style: none;
     background-color: #20a562;
     border-radius: 30px;
     justify-content: end;
+    cursor: pointer;
 }
 
 #ferrovia {
@@ -254,28 +284,36 @@ main {
 }
 
 #ferrovia img {
-    width: 15%;
+    width: 30px;
+    max-width: 15%;
 }
 
 #ferrovia p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     width: 100%;
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 #menu_rotas {
     margin-left: 8%;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 #mapaStyle {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 #mapaStyle p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     max-width: 90%;
+    text-align: center;
+    margin: 5px 0;
 }
 
 .rota {
@@ -284,7 +322,6 @@ main {
     display: flex;
     margin-top: 5px;
     cursor: pointer;
-    ;
 }
 
 #rota_texto {
@@ -292,6 +329,7 @@ main {
     font-weight: bold;
     padding: 5px;
     text-decoration: underline;
+    word-break: break-word;
 }
 
 #numero {
@@ -302,13 +340,14 @@ main {
     border-radius: 30px;
     color: #dddfe3;
     text-align: center;
+    min-width: 60px;
 }
 
 /*Alertas*/
 .alertas {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 #filtro {
@@ -319,11 +358,12 @@ main {
     font-weight: bold;
     height: 30px;
     font-size: 1rem;
+    padding: 0 10px;
+    border-radius: 5px;
 }
 
 #abaFiltro {
     justify-content: end;
-    size: 100rem;
 }
 
 .flex-Alertas {
@@ -331,16 +371,16 @@ main {
     justify-content: space-between;
     align-items: center;
     margin: 5%;
+    flex-wrap: wrap;
 }
 
 .textoAlerta {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin: 0.7rem 2rem;
-    font-size: 20px;
-    text-align: center;
+    margin: 0.7rem 1rem;
+    font-size: 1rem;
     text-align: justify;
-    margin-left: 3%;
+    line-height: 1.4;
 }
 
 .textGreen_comunicado {
@@ -348,10 +388,10 @@ main {
     font-weight: bold;
     margin-top: 3%;
     margin-left: 3%;
-    font-size: 20px;
+    font-size: 1rem;
     background-color: #187f4c;
     height: 30px;
-    width: 9.375rem;
+    width: 120px;
     text-align: center;
     align-content: center;
     border-radius: 20px;
@@ -363,10 +403,10 @@ main {
     font-weight: bold;
     margin-top: 3%;
     margin-left: 3%;
-    font-size: 20px;
+    font-size: 1rem;
     background-color: #187f4c;
     height: 30px;
-    width: 5.625rem;
+    width: 80px;
     text-align: center;
     align-content: center;
     border-radius: 20px;
@@ -378,7 +418,7 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 7%;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 #numero-0101 {
@@ -389,6 +429,7 @@ main {
     border-radius: 30px;
     color: #dddfe3;
     text-align: center;
+    min-width: 60px;
 }
 
 #numero-0101_2 {
@@ -399,6 +440,7 @@ main {
     border-radius: 30px;
     color: #dddfe3;
     text-align: center;
+    min-width: 60px;
 }
 
 #numero-titulo {
@@ -409,17 +451,20 @@ main {
     border-radius: 30px;
     color: #dddfe3;
     text-align: center;
+    min-width: 120px;
+    margin-top: 10px;
 }
 
 /* Perfil */
 
 .perfil-container {
-    max-width: 400px;
+    max-width: 90%;
     margin: 30px auto;
     padding: 20px;
     background: #f5f5f5;
     border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-sizing: border-box;
 }
 
 .info-table {
@@ -436,7 +481,8 @@ main {
     justify-content: space-between;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    flex-wrap: wrap;
 }
 
 .info-label {
@@ -453,169 +499,200 @@ main {
     border-radius: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-}
-
-/*DashBoard*/
-.section-dashboard {
-    display: flex;
-    justify-content: space-between;
-}
-
-.dashboard {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.dashboard-title {
+    display: inline-block;
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #2e7d32;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Dashboard */
+.dashboard {
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .dashboard-title h1 {
-    color: #2e7d32;
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .section-dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.temp-dashboard,
-.umida-dashboard,
-.lux-dashboard,
-.presenca-dashboard {
-    background: #ffffff;
+.temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
+    background: #f5f5f5;
+    padding: 15px;
     border-radius: 10px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 2px solid #e8f5e9;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.temp-dashboard:hover,
-.umida-dashboard:hover,
-.lux-dashboard:hover,
-.presenca-dashboard:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    border-color: #2e7d32;
-}
-
-/* Barra superior colorida */
-.temp-dashboard::before,
-.umida-dashboard::before,
-.lux-dashboard::before,
-.presenca-dashboard::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background-color: #2e7d32;
-}
-
-.section-dashboard h2 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #2e7d32;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.section-dashboard p {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    color: #000000;
-}
-
-/* Ícones minimalistas */
-.temp-dashboard h2::before {
-    content: "🌡️ ";
+.temp-dashboard h2, .umida-dashboard h2, .lux-dashboard h2, .presenca-dashboard h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
-.umida-dashboard h2::before {
-    content: "💧 ";
-    font-size: 1.2rem;
+.temp-dashboard p, .umida-dashboard p, .lux-dashboard p, .presenca-dashboard p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #187f4c;
 }
 
-.lux-dashboard h2::before {
-    content: "💡 ";
-    font-size: 1.2rem;
-}
-
-.presenca-dashboard h2::before {
-    content: "📍 ";
-    font-size: 1.2rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    main {
-        margin-left: 0;
-        padding: 20px;
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+    .menu_lateral {
+        width: 40%;
+        right: -40%;
     }
-
+    
+    #imagem_menu {
+        max-width: 100px;
+        align-items: center;
+    }
+    
+    .login {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #pesquisar_completo {
+        flex-wrap: nowrap;
+    }
+    
+    #pesquisar_rota {
+        width: 70%;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    #buscar_botao {
+        width: 30%;
+    }
+    
+    #mapaStyle {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    #mapaStyle p {
+        text-align: left;
+    }
+    
     .section-dashboard {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-
-    .dashboard-title h1 {
-        font-size: 1.8rem;
+    
+    .temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
+        width: 48%;
     }
+    
+    .perfil-container {
+        max-width: 500px;
+    }
+    
+    .foto {
+        width: auto;
+    }
+}
 
-    .section-dashboard p {
-        font-size: 1.6rem;
+@media (min-width: 1024px) {
+    .menu_lateral {
+        width: 25%;
+        right: -25%;
+    }
+    
+    .section-dashboard {
+        flex-wrap: nowrap;
+    }
+    
+    .temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
+        width: 23%;
     }
 }
 
 @media (max-width: 480px) {
-    .section-dashboard {
-        grid-template-columns: 1fr;
+    .navbar {
+        height: 80px;
+        padding: 0 10px;
     }
-
-    .temp-dashboard,
-    .umida-dashboard,
-    .lux-dashboard,
-    .presenca-dashboard {
-        padding: 20px;
+    
+    .logo img {
+        width: 80px;
+        padding: 5px;
     }
-
-    .dashboard-title {
-        margin-bottom: 30px;
+    
+    .perfil img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #imagem_menu {
+        width: 100px;
+        max-width: 80px;
+    }
+    
+    .menu_lateral {
+        width: 85%;
+        right: -85%;
+    }
+    
+    .menu_lateral a {
+        font-size: 1.2rem;
+    }
+    
+    #frase_introdutoriaText {
+        font-size: 1.2rem;
+    }
+    
+    .login {
+        font-size: 1.2rem;
+    }
+    
+    #saudacao p, .alertas, .relatorios {
+        font-size: 1.3rem;
+    }
+    
+    #ferrovia p {
+        font-size: 1.3rem;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 }
 
-/* Animações suaves */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+@media (max-width: 320px) {
+    .navbar {
+        height: 70px;
     }
-
-    to {
-        opacity: 1;
+    
+    .logo img {
+        width: 70px;
     }
-}
-
-.temp-dashboard,
-.umida-dashboard,
-.lux-dashboard,
-.presenca-dashboard {
-    animation: fadeIn 0.5s ease-out;
+    
+    .perfil img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #imagem_menu {
+        max-width: 50px;
+        top: 10px;
+    }
+    
+    #frase_introdutoriaText {
+        font-size: 1.1rem;
+    }
 }

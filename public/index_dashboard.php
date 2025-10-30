@@ -6,11 +6,8 @@ include '../src/sensores.php';
 
 session_start();
 $user = new User($conn);
-<<<<<<< HEAD
 $auth = new Auth();
-=======
 $sensor = new Sensores($conn);
->>>>>>> DashBoard
 
 if (!$auth->isLoggedIn()) {
     header("location: index.php");

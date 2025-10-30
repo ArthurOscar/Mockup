@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="../assects/Logo_dashboard.png" onclick="reload()">
+      <img src="../assects/Logo_dashboard.png">
     </div>
   </nav>
   <main>
