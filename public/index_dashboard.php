@@ -2,17 +2,17 @@
 include '../includes/db.php';
 include '../src/auth.php';
 include '../src/user.php';
-include '../src/sensores.php';
 
 session_start();
 $user = new User($conn);
 $auth = new Auth();
-$sensor = new Sensores($conn);
 
 if (!$auth->isLoggedIn()) {
     header("location: index.php");
     exit();
 }
+
+$mensagem = $_SESSION['resposta'];
 
 $currentUser = $user->getUserById($_SESSION['user_id']);
 
@@ -64,22 +64,30 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
                 <h1>DashBoard</h1>
             </div>
             <div class="section-dashboard">
-                <div class="temp-dashboard">
-                    <h2>Temperatura:</h2>
-                    <p><?php echo $sensor->sensor("Temperatura"); ?>ºC</p>
-                </div>
-                <div class="umida-dashboard">
-                    <h2>Umidade:</h2>
-                    <p><?php echo $sensor->sensor("Umidade"); ?>%</p>
-                </div>
-                <div class="lux-dashboard">
-                    <h2>Luminosidade:</h2>
-                    <p><?php echo $sensor->sensor("Luminosidade"); ?> Lux</p>
-                </div>
-                <div class="presenca-dashboard">
-                    <h2>Localização:</h2>
-                    <p>O trem está no posto: <?php echo $sensor->localizacao(); ?></p>
-                </div>
+                <?php if (!empty($mensagem)): ?>
+                    <?php foreach ($mensagem as $msg): ?>
+                        <div class="temp-dashboard">
+                            <h2>Temperatura:</h2>
+                            <p>ºC</p>
+                        </div>
+                        <div class="umida-dashboard">
+                            <h2>Umidade:</h2>
+                            <p>%</p>
+                        </div>
+                        <div class="lux-dashboard">
+                            <h2>Luminosidade:</h2>
+                            <p><?php echo htmlspecialchars($msg['msg']); ?> Lux</p>
+                        </div>
+                        <div class="presenca-dashboard">
+                            <h2>Localização:</h2>
+                            <p>O trem está no posto:</p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="sem-dados">
+                        <h2>Nenhuma mensagem recebida do broker ainda</h2>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </main>

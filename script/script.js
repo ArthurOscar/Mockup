@@ -7,7 +7,7 @@ function togglePasswordVisibility() {
         olho.src = '../assects/close-eye.png';
     } else {
         senha.type = "password";
-         olho.src = '../assects/show.png';
+        olho.src = '../assects/show.png';
     }
 }
 
@@ -52,10 +52,10 @@ function trocar_menu() {
 }
 
 // Fechar menu ao clicar em um link (mobile)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuLinks = document.querySelectorAll('#menu_links a');
     menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             if (window.innerWidth <= 768) {
                 trocar_menu();
             }
@@ -227,7 +227,7 @@ if (paginaRelatoriosName === 'index_relatorios.php') {
 }
 
 // Redimensionamento da janela
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     // Fechar menu lateral se a tela for redimensionada para um tamanho maior
     if (window.innerWidth > 768 && menuAberto) {
         trocar_menu();

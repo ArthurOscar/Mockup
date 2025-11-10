@@ -2,13 +2,6 @@ Create database TremVida;
 
 Use TremVida;
 
-CREATE TABLE Sensores (
-id_sensor INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-tipo_sensor VARCHAR(100) NOT NULL,
-localizacao VARCHAR(100),
-valor FLOAT
-);
-
 CREATE TABLE Usuarios (
 id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
