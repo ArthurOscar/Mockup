@@ -4,10 +4,10 @@ session_start();
 
 
 require("phpMQTT.php");
-require __DIR__ . '/config/env_loader.php';
+require __DIR__ . '/../includes/env_loader.php';
 
 // Carrega as variáveis do .env
-loadEnv(__DIR__ . '/config/.env');
+loadEnv(__DIR__ . '/../includes/.env');
 
 $server = $_ENV['MQTT_SERVER'];
 $port = (int) $_ENV['MQTT_PORT'];
