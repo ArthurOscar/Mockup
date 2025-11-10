@@ -1,14 +1,5 @@
 Use TremVida;
 
-INSERT INTO Sensores (tipo_sensor, localizacao, valor) VALUES
-('Temperatura', 'S1', 15),
-('Umidade', 'S1', 12),
-('Luminosidade', 'S1', 5756),
-('Presença', 'S1', 20),
-('Presença', 'S2', 20),
-('Presença', 'S2', 20),
-('Presença', 'S3', 20);
-
 INSERT INTO Usuarios (nome, email, senha, funcao) VALUES
 ('admin', 'admin@email.com', '$2y$10$s8V0x/AaK03bUvGBZKhqWeUEOUZcmWEcynyC5xZa.f92iZ3oJD1C2', 'admin');
 

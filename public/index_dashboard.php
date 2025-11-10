@@ -12,7 +12,7 @@ if (!$auth->isLoggedIn()) {
     exit();
 }
 
-$mensagem = $_SESSION['resposta'];
+$mensagem = $_SESSION['resposta'] ?? '';
 
 $currentUser = $user->getUserById($_SESSION['user_id']);
 
