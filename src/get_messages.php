@@ -3,6 +3,7 @@
 session_start();
 
 
+
 require("phpMQTT.php");
 require __DIR__ . '/../includes/env_loader.php';
 
@@ -26,13 +27,13 @@ if (!$mqtt->connect(true, NULL, $username, $password)) {
     exit;
 }
 
-// Subscribing e coletando mensagens por 1-5 segundos
+// Subscribing e coletando mensagens por 2 segundos
 $mqtt->subscribe([$topic => ["qos" => 0, "function" => function ($topic, $msg) use (&$messages) {
     $messages[] = ["topic" => $topic, "msg" => $msg, "time" => date("H:i:s")];
 }]], 0);
 
 $start = time();
-while (time() - $start < 5) { // escuta 5 segundos
+while (time() - $start < 2) { // escuta 2 segundos
     $mqtt->proc();
 }
 
@@ -41,4 +42,5 @@ var_dump($messages);
 $mqtt->close();
 
 $_SESSION['resposta'] = $messages;
+header("location: ../public/index_dashboard.php");
 ?>

@@ -62,6 +62,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
         <div class="dashboard">
             <div class="dashboard-title">
                 <h1>DashBoard</h1>
+                <a href="../src/get_messages.php" class="foto">Atualizar Página</a>
             </div>
             <div class="section-dashboard">
                 <?php if (!empty($mensagem)): ?>
@@ -76,7 +77,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
                         </div>
                         <div class="lux-dashboard">
                             <h2>Luminosidade:</h2>
-                            <p><?php echo htmlspecialchars($msg['msg']); ?> Lux</p>
+                            <p><?php echo htmlspecialchars($msg['msg']); ?></p>
                         </div>
                         <div class="presenca-dashboard">
                             <h2>Localização:</h2>

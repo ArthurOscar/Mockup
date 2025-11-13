@@ -512,9 +512,19 @@ main {
     box-sizing: border-box;
 }
 
+.dashboard-title {
+    display: flex;
+    justify-content: space-between;
+}
+
 .dashboard-title h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dashboard-title a {
     margin-bottom: 20px;
     text-align: center;
 }
