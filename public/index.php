@@ -35,16 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <img src="../assects/Logo_dashboard.png">
     </div>
   </nav>
-  <main>
-    <div class="frase_introdutoria">
-      <img src="../assects/TremVida_slogan.png" alt="">
-      <p id="frase_introdutoriaText">Fazendo das rodovias
-        em vias da vida</p>
-    </div>
+  <main class="loginMain">
     <div class="login">
       <form method="POST">
         <strong id="texto_login">Fazer Login:</strong><br>
-        <input type="text" id="usuario_login" name="email" placeholder="Email">
+        <input type="text" id="input_login" name="email" placeholder="Email">
         <div class="senha">
           <input type="password" id="senha_login" name="senha" placeholder="Senha">
           <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"

@@ -61,14 +61,13 @@ main {
     position: fixed;
     top: 0;
     right: -80%;
-    width: 80%;
+    width: 10rem;
     height: 100%;
     background-color: #187f4c;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
-    transition: right 0.3s ease;
+    transition: right 0.7s ease;
     z-index: 1000;
 }
 
@@ -105,83 +104,58 @@ main {
 }
 
 /* Tela de Login */
-.frase_introdutoria {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 10px 5px;
-    text-align: center;
-}
-
-.frase_introdutoria img {
-    border-radius: 20px;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 3/2;
-}
-
-#frase_introdutoriaText {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: 10px 0;
+.loginMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ocupa toda a página */
+    min-height: calc(100vh - 100px); /* 100px é a navbar */
 }
 
 .login {
     background-color: #187f4c;
+    width: 30%;
     color: #dddfe3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
     border-radius: 20px;
-    padding: 5%;
-    margin: 0 10px;
     align-items: center;
     justify-content: center;
-    align-content: center;
-    align-self: center;
     box-sizing: border-box;
+}
+
+.login form{
+    margin: 15% 10%;
 }
 
 .login ::-webkit-input-placeholder {
     color: #94a0b7;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    padding: 3%;
 }
 
 #texto_login {
-    margin-left: 10px;
     font-size: 1.2rem;
 }
 
-#usuario_login {
+#input_login, #senha_login {
     margin: 5px 0;
     font-size: 1rem;
-    color: #94a0b7;
+    color: #000000;
     background-color: #dddfe3;
     border-radius: 10px;
     width: 100%;
     height: 50px;
     border-style: none;
-    padding: 0 10px;
+    padding: 3%;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .senha {
     display: flex;
     align-items: center;
     width: 100%;
-}
-
-#senha_login {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #94a0b7;
-    background-color: #dddfe3;
-    border-radius: 10px;
-    width: 100%;
-    height: 50px;
-    border-style: none;
-    padding: 0 10px;
-    box-sizing: border-box;
 }
 
 #enviarDados {
@@ -194,7 +168,11 @@ main {
     height: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-style: none;
+}
+
+#enviarDados:hover{
     cursor: pointer;
+    background-color: rgb(37, 104, 37);
 }
 
 #olho {
@@ -603,7 +581,7 @@ main {
     }
     
     .temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
-        width: 48%;
+        width: 100%;
     }
     
     .perfil-container {
