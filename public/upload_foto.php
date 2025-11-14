@@ -7,7 +7,7 @@ session_start();
 $auth = new Auth();
 $user = new User($conn);
 
-if (!$auth->isLoggedIn()){
+if (!$auth->isLoggedIn()) {
     header("location: index.php");
     exit();
 }
@@ -15,32 +15,41 @@ if (!$auth->isLoggedIn()){
 $user = new User($conn);
 $currentUser = $user->getUserById($_SESSION['user_id']);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['foto_perfil'])) {
-    $target_dir = '../uploads/';
-    $target_file = $target_dir . basename($_FILES['foto_perfil']['name']);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['enviar'])) {
+        if (empty($_FILES['foto_perfil']['tmp_name'])) {
+            echo "<script>alert('Selecione uma foto.')</script>";
+        } else {
+            $target_dir = '../uploads/';
+            $target_file = $target_dir . basename($_FILES['foto_perfil']['name']);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    $check = getimagesize($_FILES['foto_perfil']['tmp_name']);
-    if ($check !== false) {
-        $uploadOk = 1;
-    } else {
-        echo "O arquivo não é uma imagem.";
-        $uploadOk = 0;
-    }
+            $check = getimagesize($_FILES['foto_perfil']['tmp_name']);
+            if ($check !== false) {
+                $uploadOk = 1;
+            } else {
+                echo "O arquivo não é uma imagem.";
+                $uploadOk = 0;
+            }
 
-    if ($_FILES['foto_perfil']['size'] > 500000) {
-        echo "Imagem muito pesada para o sistema";
-        $uplaodOk = 0;
-    }
+            if ($_FILES['foto_perfil']['size'] > 500000) {
+                echo "Imagem muito pesada para o sistema";
+                $uplaodOk = 0;
+            }
 
-    if ($uploadOk == 0) {
-        echo "Desculpe seu arquivo não foi enviado.";
-    } else {
-        if (move_uploaded_file($_FILES['foto_perfil']["tmp_name"], $target_file)) {
-            $user->updateProfilePic($_SESSION['user_id'], basename($_FILES['foto_perfil']['name']));
-            header("location: index_dashboard.php");
+            if ($uploadOk == 0) {
+                echo "Desculpe seu arquivo não foi enviado.";
+            } else {
+                if (move_uploaded_file($_FILES['foto_perfil']["tmp_name"], $target_file)) {
+                    $user->updateProfilePic($_SESSION['user_id'], basename($_FILES['foto_perfil']['name']));
+                    header("location: index_dashboard.php");
+                }
+            }
         }
+    } else if (isset($_POST['excluir'])) {
+        $user->updateProfilePic($_SESSION['user_id'], "default.jpg");
+        header("location: index_perfil.php");
     }
 }
 
@@ -90,10 +99,12 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     <main class="perfil-container">
         <h2>Alterar foto de perfil:</h2><br>
         <form action="upload_foto.php" method="POST" enctype="multipart/form-data">
-            <input type="file" class="foto" name="foto_perfil" accept="image/*" required><br><br>
-            <button class="foto" type="submit">Enviar Foto</button><br><br
+            <input type="file" class="foto" name="foto_perfil" accept="image/*"><br><br>
+            <div style="display: flex; justify-content: space-between;">
+                <button class="foto" type="submit" style="max-width: 40%;" name="enviar">Enviar Foto</button><br><br>
+                <button class="foto" type="submit" style="max-width: 40%;" name="excluir">Excluir Foto</button>
+            </div>
         </form>
-        <a class="foto" href="index_dashboard.php">Voltar</a>
     </main>
 </body>
 

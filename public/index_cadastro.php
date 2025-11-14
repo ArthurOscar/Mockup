@@ -7,7 +7,7 @@ include '../src/apiEmail.php';
 session_start();
 $user = new User($conn);
 $auth = new Auth();
-$currentUser = $user -> getUserById($_SESSION['user_id']);
+$currentUser = $user->getUserById($_SESSION['user_id']);
 $verifyEmail = new Email();
 
 if (!$auth->isLoggedIn()) {
@@ -15,13 +15,13 @@ if (!$auth->isLoggedIn()) {
     exit();
 }
 
-if($currentUser["funcao"] === "Funcionário"){
+if ($currentUser["funcao"] === "Funcionário") {
     header("location: index_dashboard.php");
     exit();
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if($_POST['nome'] == "" || $_POST['email'] == "" || $_POST['senha'] == "" || $_POST['funcao'] == ""){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_POST['nome'] == "" || $_POST['email'] == "" || $_POST['senha'] == "" || $_POST['funcao'] == "") {
         echo "<script>alert('Preencha todos os campos!')</script>";
         header("Refresh:0");
         exit();
@@ -78,25 +78,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         </div>
     </div>
     <br>
-    <div class="login">
-        <form method="POST">
-            <strong id="texto_login">Novo Cadastro:</strong><br>
-            <input type="text" id="usuario_login" name="nome" maxlength="100" placeholder="Usuário">
-            <input type="text" id="usuario_login" name="email" maxlength="250" placeholder="Email">
-            <div class="senha">
-                <input type="password" maxlength="100" id="senha_login" name="senha" placeholder="Senha">
-                <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"
-                        src="../assects/show.png"></button>
-            </div>
-            <select name="funcao" id="usuario_login" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">
-                <option value="">Função</option>
-                <option value="Admin">Administrador</option>
-                <option value="Funcionário">Funcionário</option>
-            </select>
-            <button type="submit" id="enviarDados">Cadastrar</button>
-        </form>
-    </div>
-    <link rel="stylesheet" href="../style/style.css">
+    <main class="loginMain">
+        <div class="login">
+            <form method="POST">
+                <strong id="texto_login">Novo Cadastro:</strong><br>
+                <input type="text" id="input_login" name="nome" maxlength="100" placeholder="Usuário">
+                <input type="text" id="input_login" name="email" maxlength="250" placeholder="Email">
+                <div class="senha">
+                    <input type="password" maxlength="100" id="senha_login" name="senha" placeholder="Senha">
+                    <button type="button" id="olho" onclick="togglePasswordVisibility()"><img id="olho_img"
+                            src="../assects/show.png"></button>
+                </div>
+                <select name="funcao" id="input_login" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">
+                    <option value="">Função</option>
+                    <option value="Admin">Administrador</option>
+                    <option value="Funcionário">Funcionário</option>
+                </select>
+                <button type="submit" id="enviarDados">Cadastrar</button>
+            </form>
+        </div>
+        <link rel="stylesheet" href="../style/style.css">
+    </main>
 </body>
 
 </html>

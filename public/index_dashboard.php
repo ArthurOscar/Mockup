@@ -107,7 +107,7 @@ if (!empty($mensagem_umi)) {
         <div class="dashboard">
             <div class="dashboard-title">
                 <h1>DashBoard</h1>
-                <a href="../src/get_messages.php" class="foto">Atualizar Página</a>
+                <a href="../src/get_messages.php" class="att_dashboard">Atualizar Página</a>
             </div>
             <div class="section-dashboard">
                 

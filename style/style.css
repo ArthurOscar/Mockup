@@ -60,32 +60,41 @@ main {
 .menu_lateral {
     position: fixed;
     top: 0;
-    right: -80%;
-    width: 10rem;
+    right: -100%;
+    width: 280px;
+    max-width: 90vw;
     height: 100%;
     background-color: #187f4c;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    padding-top: 3.5rem;
     transition: right 0.7s ease;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
+#menu_links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: right;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+    position: relative;
+    text-align: right;
+}
+
+/* Links estilo */
 .menu_lateral a {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    justify-content: end;
-    margin-top: 15px;
-}
-
-#menu_links {
-    margin-top: 30%;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    text-align: right;
+    margin-top: 0;
+    padding: 0.35rem 1rem;
 }
 
 .menu_lateral.show {
@@ -93,14 +102,12 @@ main {
 }
 
 #imagem_menu {
-    width: 100%;
-    margin-left: 50%;
     position: absolute;
-    top: 0px;
-    right: 5px;
-    z-index: 2000;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    width: 40px;
     cursor: pointer;
-    max-width: 40px;
 }
 
 /* Tela de Login */
@@ -477,6 +484,7 @@ main {
 
 /* Foto de perfil */
 .foto {
+    display: block;
     padding: 10px 20px;
     background-color: #187f4c;
     color: white;
@@ -484,16 +492,29 @@ main {
     border-radius: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    display: inline-block;
     text-align: center;
     margin: 5px 0;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /* Dashboard */
 .dashboard {
     padding: 20px;
+    box-sizing: border-box;
+}
+
+.att_dashboard{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #187f4c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
     box-sizing: border-box;
 }
 
@@ -607,10 +628,6 @@ main {
     .perfil-container {
         max-width: 500px;
     }
-
-    .foto {
-        width: auto;
-    }
 }
 
 @media (min-width: 1024px) {
@@ -637,16 +654,13 @@ main {
         max-width: 80px;
         top: 5px;
     }
-
-    .foto {
-        width: 200px;
-    }
 }
 
 @media (max-width: 480px) {
     .navbar {
         height: 80px;
         padding: 0 10px;
+        align-items: center;
     }
 
     .logo img {
@@ -662,18 +676,15 @@ main {
     #imagem_menu {
         width: 100px;
         max-width: 80px;
+        top: 0;
     }
 
     .menu_lateral {
-        width: 85%;
+        width: 65%;
         right: -85%;
     }
 
     .menu_lateral a {
-        font-size: 1.2rem;
-    }
-
-    #frase_introdutoriaText {
         font-size: 1.2rem;
     }
 
@@ -701,10 +712,6 @@ main {
         flex-direction: column;
         align-items: center;
     }
-
-    .foto {
-        max-width: 70%;
-    }
 }
 
 @media (max-width: 320px) {
@@ -726,12 +733,17 @@ main {
         top: 10px;
     }
 
-    #frase_introdutoriaText {
-        font-size: 1.1rem;
+    .menu_lateral {
+        width: 50%;
+        padding: 2rem 0;
     }
 
-    .foto {
-        max-width: 80%;
+    #menu_links{
+        padding: 2rem 0;
+    }
+
+    .menu_lateral a {
+        font-size: 1rem;
     }
 }
 

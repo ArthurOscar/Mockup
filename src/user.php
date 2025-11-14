@@ -38,7 +38,7 @@ class User {
         return $stmt -> fetch(PDO::FETCH_ASSOC);
     }
     public function updateProfilePic($user_id,$profilePic){
-        $sql = "UPDATE usuarios SET foto_perfil = :profile_pic WHERE id_usuario              = :id";
+        $sql = "UPDATE usuarios SET foto_perfil = :profile_pic WHERE id_usuario = :id";
         $stmt = $this-> conn->prepare($sql);
         $stmt -> bindParam(':profile_pic', $profilePic);
         $stmt -> bindParam(':id', $user_id);
