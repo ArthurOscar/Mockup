@@ -498,6 +498,15 @@ main {
     width: 100%;
 }
 
+.foto:hover{
+    cursor: pointer;
+    background-color: #1ea160;
+}
+
+#file-upload-button input{
+    background-color: rgb(0, 0, 0);
+}
+
 /* Dashboard */
 .dashboard {
     padding: 20px;

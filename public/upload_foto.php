@@ -98,11 +98,11 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     </div>
     <main class="perfil-container">
         <h2>Alterar foto de perfil:</h2><br>
-        <form action="upload_foto.php" method="POST" enctype="multipart/form-data">
+        <form action="upload_foto.php" method="POST" enctype="multipart/form-data" id="upload_foto_container">
             <input type="file" class="foto" name="foto_perfil" accept="image/*"><br><br>
             <div style="display: flex; justify-content: space-between;">
-                <button class="foto" type="submit" style="max-width: 40%;" name="enviar">Enviar Foto</button><br><br>
-                <button class="foto" type="submit" style="max-width: 40%;" name="excluir">Excluir Foto</button>
+                <button class="foto" type="submit" style="max-width: 40%; border: none;" name="enviar">Enviar Foto</button><br><br>
+                <button class="foto" type="submit" style="max-width: 40%; border: none;" name="excluir">Excluir Foto</button>
             </div>
         </form>
     </main>
