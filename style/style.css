@@ -104,80 +104,69 @@ main {
 }
 
 /* Tela de Login */
-.loginMain{
+.loginMain {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Ocupa toda a página */
-    min-height: calc(100vh - 100px); /* 100px é a navbar */
+    min-height: calc(100vh - 100px);
+    /* mantém o centro abaixo da navbar */
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .login {
     background-color: #187f4c;
-    width: 30%;
     color: #dddfe3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5rem;
     border-radius: 20px;
-    align-items: center;
-    justify-content: center;
+    box-sizing: border-box;
+    width: 90%;
+    max-width: 420px;
+    padding: 1.5rem;
+}
+
+/* Faz o form ocupar todo o container */
+.login form {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
     box-sizing: border-box;
 }
 
-.login form{
-    margin: 15% 10%;
+
+#input_login,
+#senha_login,
+#enviarDados {
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.login ::-webkit-input-placeholder {
-    color: #94a0b7;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-}
-
-#texto_login {
-    font-size: 1.2rem;
-}
-
-#input_login, #senha_login {
-    margin: 5px 0;
+#input_login,
+#senha_login {
     font-size: 1rem;
-    color: #000000;
+    color: #000;
     background-color: #dddfe3;
     border-radius: 10px;
-    width: 100%;
-    height: 50px;
-    border-style: none;
-    padding: 3%;
-    box-sizing: border-box;
+    height: 48px;
+    border: none;
+    padding: 0 0.9rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .senha {
     display: flex;
     align-items: center;
-    width: 100%;
 }
 
-#enviarDados {
-    margin: 5px 0;
-    font-size: 1.2rem;
-    color: white;
-    background-color: rgb(27, 77, 27);
-    border-radius: 10px;
-    width: 100%;
-    height: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-style: none;
-}
-
-#enviarDados:hover{
-    cursor: pointer;
-    background-color: rgb(37, 104, 37);
+.senha input {
+    flex: 1;
 }
 
 #olho {
     background-color: #dddfe3;
-    width: 60px;
+    width: 3rem;
     border-style: none;
     border-radius: 10px;
     height: 50px;
@@ -191,6 +180,24 @@ main {
 #olho img {
     width: 30px;
     height: auto;
+}
+
+#enviarDados {
+    height: 48px;
+    font-size: 1.05rem;
+    background-color: rgb(27, 77, 27);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+
+#enviarDados:hover {
+    cursor: pointer;
+    background-color: rgb(36, 105, 36);
+}
+
+#texto_login {
+    font-size: 2rem;
 }
 
 /* Gestão de rotas */
@@ -441,7 +448,7 @@ main {
     padding: 20px;
     background: #f5f5f5;
     border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     box-sizing: border-box;
 }
 
@@ -514,20 +521,29 @@ main {
     gap: 15px;
 }
 
-.temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
+.temp-dashboard,
+.umida-dashboard,
+.lux-dashboard,
+.presenca-dashboard {
     background: #f5f5f5;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.temp-dashboard h2, .umida-dashboard h2, .lux-dashboard h2, .presenca-dashboard h2 {
+.temp-dashboard h2,
+.umida-dashboard h2,
+.lux-dashboard h2,
+.presenca-dashboard h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
-.temp-dashboard p, .umida-dashboard p, .lux-dashboard p, .presenca-dashboard p {
+.temp-dashboard p,
+.umida-dashboard p,
+.lux-dashboard p,
+.presenca-dashboard p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
@@ -540,55 +556,58 @@ main {
         width: 40%;
         right: -40%;
     }
-    
+
     #imagem_menu {
         max-width: 100px;
         align-items: center;
     }
-    
+
     .login {
         max-width: 500px;
         margin: 0 auto;
     }
-    
+
     #pesquisar_completo {
         flex-wrap: nowrap;
     }
-    
+
     #pesquisar_rota {
         width: 70%;
         margin-bottom: 0;
         margin-right: 10px;
     }
-    
+
     #buscar_botao {
         width: 30%;
     }
-    
+
     #mapaStyle {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
     }
-    
+
     #mapaStyle p {
         text-align: left;
     }
-    
+
     .section-dashboard {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    
-    .temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
+
+    .temp-dashboard,
+    .umida-dashboard,
+    .lux-dashboard,
+    .presenca-dashboard {
         width: 100%;
     }
-    
+
     .perfil-container {
         max-width: 500px;
     }
-    
+
     .foto {
         width: auto;
     }
@@ -599,23 +618,27 @@ main {
         width: 25%;
         right: -25%;
     }
-    
+
     .section-dashboard {
         flex-wrap: nowrap;
     }
-    
-    .temp-dashboard, .umida-dashboard, .lux-dashboard, .presenca-dashboard {
+
+    .temp-dashboard,
+    .umida-dashboard,
+    .lux-dashboard,
+    .presenca-dashboard {
         width: 23%;
     }
 }
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
     #imagem_menu {
         width: 100px;
         max-width: 80px;
         top: 5px;
     }
-    .foto{
+
+    .foto {
         width: 200px;
     }
 }
@@ -625,57 +648,61 @@ main {
         height: 80px;
         padding: 0 10px;
     }
-    
+
     .logo img {
         width: 80px;
         padding: 5px;
     }
-    
+
     .perfil img {
         width: 40px;
         height: 40px;
     }
-    
+
     #imagem_menu {
         width: 100px;
         max-width: 80px;
     }
-    
+
     .menu_lateral {
         width: 85%;
         right: -85%;
     }
-    
+
     .menu_lateral a {
         font-size: 1.2rem;
     }
-    
+
     #frase_introdutoriaText {
         font-size: 1.2rem;
     }
-    
+
     .login {
         font-size: 1.2rem;
     }
-    
-    #saudacao p, .alertas, .relatorios {
+
+    #saudacao p,
+    .alertas,
+    .relatorios {
         font-size: 1.3rem;
     }
-    
+
     #ferrovia p {
         font-size: 1.3rem;
     }
-    
+
     .info-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
     }
+
     .dashboard-title {
         flex-direction: column;
         align-items: center;
     }
-    .foto{
+
+    .foto {
         max-width: 70%;
     }
 }
@@ -684,25 +711,38 @@ main {
     .navbar {
         height: 70px;
     }
-    
+
     .logo img {
         width: 70px;
     }
-    
+
     .perfil img {
         width: 35px;
         height: 35px;
     }
-    
+
     #imagem_menu {
         max-width: 50px;
         top: 10px;
     }
-    
+
     #frase_introdutoriaText {
         font-size: 1.1rem;
     }
-    .foto{
+
+    .foto {
         max-width: 80%;
+    }
+}
+
+@media (min-width: 900px) {
+    .login {
+        width: 420px;
+    }
+}
+
+@media (max-width: 380px) {
+    #texto_login {
+        font-size: 1.5rem;
     }
 }
