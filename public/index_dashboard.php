@@ -115,8 +115,8 @@ if (!empty($mensagem_umi)) {
                 <div class="temp-dashboard">
                     <h2>Temperatura:</h2>
                     <?php
-                    $displayTemp = htmlspecialchars($temp_atual_msg ?? 'Sem dado');
-                    $displayTempTime = htmlspecialchars($temp_atual_time ?? 'Sem horário');
+                    $displayTemp = htmlspecialchars($temp_atual_msg);
+                    $displayTempTime = htmlspecialchars($temp_atual_time);
                     ?>
                     <p><?php echo $displayTemp; ?>ºC</p>
                     <h2>Horário:</h2>
@@ -127,8 +127,8 @@ if (!empty($mensagem_umi)) {
                 <div class="umida-dashboard">
                     <h2>Umidade:</h2>
                     <?php
-                    $displayUmi = htmlspecialchars($umi_atual_msg ?? '— sem dado —');
-                    $displayUmiTime = htmlspecialchars($umi_atual_time ?? '— sem horário —');
+                    $displayUmi = htmlspecialchars($umi_atual_msg);
+                    $displayUmiTime = htmlspecialchars($umi_atual_time);
                     ?>
                     <p><?php echo $displayUmi; ?>%</p>
                     <h2>Horário:</h2>
@@ -139,8 +139,8 @@ if (!empty($mensagem_umi)) {
                 <div class="lux-dashboard">
                     <h2>Iluminação:</h2>
                     <?php
-                    $displayIlu = htmlspecialchars($ilu_atual_msg ?? '— sem dado —');
-                    $displayIluTime = htmlspecialchars($ilu_atual_time ?? '— sem horário —');
+                    $displayIlu = htmlspecialchars($ilu_atual_msg);
+                    $displayIluTime = htmlspecialchars($ilu_atual_time);
                     ?>
                     <p><?php echo $displayIlu; ?></p>
                     <h2>Horário:</h2>

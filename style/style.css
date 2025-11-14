@@ -493,6 +493,7 @@ main {
 .dashboard-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .dashboard-title h1 {
@@ -614,6 +615,9 @@ main {
         max-width: 80px;
         top: 5px;
     }
+    .foto{
+        width: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -667,6 +671,13 @@ main {
         align-items: flex-start;
         gap: 5px;
     }
+    .dashboard-title {
+        flex-direction: column;
+        align-items: center;
+    }
+    .foto{
+        max-width: 70%;
+    }
 }
 
 @media (max-width: 320px) {
@@ -690,5 +701,8 @@ main {
     
     #frase_introdutoriaText {
         font-size: 1.1rem;
+    }
+    .foto{
+        max-width: 80%;
     }
 }
