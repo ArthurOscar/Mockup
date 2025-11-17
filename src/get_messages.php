@@ -3,6 +3,7 @@
 session_start();
 
 
+date_default_timezone_set('America/Sao_Paulo'); // Define o fuso-horário de São Paulo
 
 require("phpMQTT.php");
 require __DIR__ . '/../includes/env_loader.php';
@@ -48,6 +49,7 @@ $start = time();
 while (time() - $start < 2) { // escuta 2 segundos
     $mqtt->proc();
 }
+
 
 $mqtt->close();
 
