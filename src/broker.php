@@ -9,38 +9,22 @@ class Broker
         $this->conn = $db;
     }
 
-    // Guarda o Valor do topico s1/iluminacao
-    public function saveDataIlu($msg, $time)
+    // Salva no Histórico
+    public function saveHist($topic, $msg, $time)
     {
-        $sql = "UPDATE Valor_sensores SET msg = :msg, time = :time WHERE topic = 's1/iluminacao'";
+        $sql = "INSERT INTO Historico_sensores (topic, msg, time) VALUES (:topic, :msg, :time)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':msg', $msg);
-        $stmt->bindParam(':time', $time);
-        return $stmt->execute();
-    }
-
-    public function saveDataTemp($msg, $time)
-    {
-        $sql = "UPDATE Valor_sensores SET msg = :msg, time = :time WHERE topic = 's1/temperatura'";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':msg', $msg);
-        $stmt->bindParam(':time', $time);
-        return $stmt->execute();
-    }
-
-    public function saveDataUmi($msg, $time)
-    {
-        $sql = "UPDATE Valor_sensores SET msg = :msg, time = :time WHERE topic = 's1/umidade'";
-        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':topic', $topic);
         $stmt->bindParam(':msg', $msg);
         $stmt->bindParam(':time', $time);
         return $stmt->execute();
     }
 
     // Mostra o Valor do banco de dados
+    // Busca pelo último dado do sensor
     public function dataIlu()
     {
-        $sql = "SELECT * FROM Valor_sensores WHERE topic= 's1/iluminacao'";
+        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/iluminacao' ORDER BY CONCAT(date, ' ', time) DESC LIMIT 1;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $iluminacao = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -53,7 +37,7 @@ class Broker
     }
     public function dataTemp()
     {
-        $sql = "SELECT * FROM Valor_sensores WHERE topic= 's1/temperatura'";
+        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/temperatura' ORDER BY CONCAT(date, ' ', time) DESC LIMIT 1;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $temperatura = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -66,7 +50,7 @@ class Broker
     }
     public function dataUmi()
     {
-        $sql = "SELECT * FROM Valor_sensores WHERE topic= 's1/umidade'";
+        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/umidade' ORDER BY CONCAT(date, ' ', time) DESC LIMIT 1;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $umidade = $stmt->fetch(PDO::FETCH_ASSOC);

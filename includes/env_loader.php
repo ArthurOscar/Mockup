@@ -23,3 +23,4 @@ function loadEnv($path)
         putenv("$name=$value");
     }
 }
+?>
