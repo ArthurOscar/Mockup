@@ -1,5 +1,5 @@
 # Como rodar o código:
-- Clone este repósitorio na pasta htdocs e mude suas credenciais no config_example.php
+- Clone este repósitorio na pasta htdocs e mude suas credenciais no config_example.php e procurar para o dono do repositório para colar o arquivo .env
 - Copie todo o schema.sql e cole na caixa de consulta sql no phpmyadmin
 - Logo após, copia e cola o arquivo seed.sql no mesmo lugar
 - Ligue o xampp e execute com localhost no seu navegador
