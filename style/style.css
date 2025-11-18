@@ -267,6 +267,40 @@ main {
     cursor: pointer;
 }
 
+#numero-0101 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+    text-align: center;
+    min-width: 60px;
+}
+
+#numero-0101_2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+    text-align: center;
+    min-width: 60px;
+}
+
+#numero-titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #187f4c;
+    border-radius: 30px;
+    color: #dddfe3;
+    text-align: center;
+    min-width: 120px;
+    margin-top: 10px;
+}
+
 #ferrovia {
     margin-left: 7%;
     display: flex;
@@ -405,47 +439,14 @@ main {
     color: #dddfe3;
 }
 
-/* Relátorios */
-.relatorios {
+/* Histórico */
+.historico {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     padding: 7%;
     font-size: 1.5rem;
 }
 
-#numero-0101 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-    text-align: center;
-    min-width: 60px;
-}
-
-#numero-0101_2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-    text-align: center;
-    min-width: 60px;
-}
-
-#numero-titulo {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    padding: 5px;
-    background-color: #187f4c;
-    border-radius: 30px;
-    color: #dddfe3;
-    text-align: center;
-    min-width: 120px;
-    margin-top: 10px;
-}
 
 /* Perfil */
 
@@ -703,7 +704,7 @@ main {
 
     #saudacao p,
     .alertas,
-    .relatorios {
+    .historico {
         font-size: 1.3rem;
     }
 

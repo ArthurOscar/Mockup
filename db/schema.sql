@@ -7,7 +7,7 @@ id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
 email VARCHAR(250) NOT NULL UNIQUE,
 senha VARCHAR(100) NOT NULL,
-funcao ENUM('Admin','Funcionário'),
+funcao ENUM('Admin','Funcionário') NOT NULL,
 foto_perfil VARCHAR(255) DEFAULT('default.jpg')
 );
 
@@ -28,3 +28,5 @@ msg VARCHAR(45) NOT NULL,
 time TIME NOT NULL,
 date DATE DEFAULT (CURDATE())
 );
+
+ALTER TABLE usuarios ADD situacao ENUM('Ativo', 'Inativo') DEFAULT ('Ativo');

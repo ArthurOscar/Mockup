@@ -19,7 +19,7 @@ class User {
     }
 
     public function login($email, $password){
-        $sql = "SELECT * FROM usuarios WHERE email= :email";
+        $sql = "SELECT * FROM usuarios WHERE email= :email AND situacao = 'Ativo'";
         $stmt = $this -> conn->prepare($sql);
         $stmt ->bindParam(":email", $email);
         $stmt->execute();
