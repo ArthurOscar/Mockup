@@ -21,12 +21,6 @@ data_envio DATETIME,
 FOREIGN KEY (id_usuario_alerta) REFERENCES Usuarios(id_usuario)
 );
 
-CREATE TABLE Valor_Sensores (
-topic VARCHAR(45) NOT NULL,
-msg VARCHAR(45) NOT NULL,
-time TIME NOT NULL
-);
-
 CREATE TABLE Historico_sensores(
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 topic VARCHAR(45) NOT NULL,

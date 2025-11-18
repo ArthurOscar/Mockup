@@ -24,7 +24,7 @@ class Broker
     // Busca pelo último dado do sensor
     public function dataIlu()
     {
-        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/iluminacao' ORDER BY CONCAT(date, ' ', time) DESC LIMIT 1;";
+        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/iluminacao' ORDER BY id DESC LIMIT 1;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $iluminacao = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -37,7 +37,7 @@ class Broker
     }
     public function dataTemp()
     {
-        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/temperatura' ORDER BY CONCAT(date, ' ', time) DESC LIMIT 1;";
+        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/temperatura' ORDER BY id DESC LIMIT 1;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $temperatura = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -50,7 +50,7 @@ class Broker
     }
     public function dataUmi()
     {
-        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/umidade' ORDER BY CONCAT(date, ' ', time) DESC LIMIT 1;";
+        $sql = "SELECT * FROM historico_sensores WHERE topic = 's1/umidade' ORDER BY id DESC LIMIT 1;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $umidade = $stmt->fetch(PDO::FETCH_ASSOC);

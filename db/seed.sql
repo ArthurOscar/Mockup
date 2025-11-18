@@ -8,7 +8,7 @@ INSERT INTO Alertas (tipo_alerta, mensagem, prioridade, id_usuario_alerta, data_
 ('Operacional', 'Atraso detectado na Linha Sul.', 'Média', 1, '2025-09-23 15:30:00'),
 ('Informativo', 'Relatório de eficiência disponível.', 'Baixa', 1, '2025-09-23 16:00:00');
 
-INSERT INTO Valor_Sensores (topic, msg, time) VALUES
-('s1/iluminacao','example','00:00'),
-('s1/temperatura','example','00:00'),
-('s1/umidade','example','00:00');
+INSERT INTO Historico_sensores (topic, msg, time) VALUES
+('s1/iluminacao','null','00:00:00'),
+('s1/temperatura','null','00:00:00'),
+('s1/umidade','null','00:00:00');
