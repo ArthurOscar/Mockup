@@ -375,7 +375,9 @@ main {
 .alertas {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 3rem;
+    margin-left: -4.5rem;
+    margin-top: -90px;
 }
 
 #filtro {
@@ -392,6 +394,7 @@ main {
 
 #abaFiltro {
     justify-content: end;
+    margin-top: -90px;
 }
 
 .flex-Alertas {
@@ -406,7 +409,7 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     margin: 0.7rem 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: justify;
     line-height: 1.4;
 }
@@ -414,12 +417,12 @@ main {
 .textGreen_comunicado {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 1rem;
+    margin-top: 1%;
+    margin-left: 1%;
+    font-size: 1.2rem;
     background-color: #187f4c;
-    height: 30px;
-    width: 120px;
+    height: 40px;
+    width: 140px;
     text-align: center;
     align-content: center;
     border-radius: 20px;
@@ -429,11 +432,11 @@ main {
 .textGreen_alerta {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-top: 3%;
-    margin-left: 3%;
-    font-size: 1rem;
+    margin-top: 1%;
+    margin-left: 1%;
+    font-size: 1.2rem;
     background-color: #187f4c;
-    height: 30px;
+    height: 40px;
     width: 80px;
     text-align: center;
     align-content: center;
