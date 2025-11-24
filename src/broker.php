@@ -32,7 +32,8 @@ class Broker
         // Retorna os dois valores como um array
         return [
             'msg_anterior' => $iluminacao['msg'],
-            'time_anterior' => $iluminacao['time']
+            'time_anterior' => $iluminacao['time'],
+            'date_anterior' => $iluminacao['date']
         ];
     }
     public function dataTemp()
@@ -45,7 +46,8 @@ class Broker
         // Retorna os dois valores como um array
         return [
             'msg_anterior' => $temperatura['msg'],
-            'time_anterior' => $temperatura['time']
+            'time_anterior' => $temperatura['time'],
+            'date_anterior' => $temperatura['date']
         ];
     }
     public function dataUmi()
@@ -58,7 +60,8 @@ class Broker
         // Retorna os dois valores como um array
         return [
             'msg_anterior' => $umidade['msg'],
-            'time_anterior' => $umidade['time']
+            'time_anterior' => $umidade['time'],
+            'date_anterior' => $umidade['date']
         ];
     }
 }

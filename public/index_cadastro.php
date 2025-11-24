@@ -1,4 +1,5 @@
 <?php
+
 include '../includes/db.php';
 include '../src/auth.php';
 include '../src/user.php';
@@ -34,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
     echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = 'index_dashboard.php';</script>";
 }
-
 
 ?>
 

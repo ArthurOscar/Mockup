@@ -20,7 +20,7 @@ $mensagem_ilu = $_SESSION['resposta_ilu'] ?? '';
 $mensagem_temp = $_SESSION['resposta_temp'] ?? '';
 $mensagem_umi = $_SESSION['resposta_umi'] ?? '';
 
-/* Iluminação */
+// Iluminação
 if (!empty($mensagem_ilu)) {
     // end() mostra a última mensagem do array
     $ultimaMsgIlu = end($mensagem_ilu);
@@ -32,9 +32,10 @@ if (!empty($mensagem_ilu)) {
     $ilu_antigo = $broker->dataIlu();
     $ilu_atual_msg = $ilu_antigo['msg_anterior'] ?? null;
     $ilu_atual_time = $ilu_antigo['time_anterior'] ?? null;
+    $ilu_atual_date = $ilu_antigo['date_anterior'] ?? null;
 }
 
-/* Temperatura */
+// Temperatura
 if (!empty($mensagem_temp)) {
     // Pega a última mensagem
     $ultimaMsgTemp = end($mensagem_temp);
@@ -46,9 +47,10 @@ if (!empty($mensagem_temp)) {
     $temp_antigo = $broker->dataTemp();
     $temp_atual_msg = $temp_antigo['msg_anterior'] ?? null;
     $temp_atual_time = $temp_antigo['time_anterior'] ?? null;
+    $temp_atual_date = $temp_antigo['date_anterior'] ?? null;
 }
 
-/* Umidade */
+// Umidade
 if (!empty($mensagem_umi)) {
     $ultimaMsgUmi = end($mensagem_umi);
     $broker->saveHist("s1/umidade", $ultimaMsgUmi['msg'], $ultimaMsgUmi['time']);
@@ -58,6 +60,7 @@ if (!empty($mensagem_umi)) {
     $umi_antigo = $broker->dataUmi();
     $umi_atual_msg = $umi_antigo['msg_anterior'] ?? null;
     $umi_atual_time = $umi_antigo['time_anterior'] ?? null;
+    $umi_atual_date = $umi_antigo['date_anterior'] ?? null;
 }
 
 ?>
@@ -116,10 +119,14 @@ if (!empty($mensagem_umi)) {
                     <?php
                     $displayTemp = htmlspecialchars($temp_atual_msg);
                     $displayTempTime = htmlspecialchars($temp_atual_time);
+                    $dateObj = new DateTime($temp_atual_date);
+                    $displayTempDate = $dateObj->format('d/m/Y');
                     ?>
                     <p><?php echo $displayTemp; ?>ºC</p>
                     <h2>Horário:</h2>
                     <p><?php echo $displayTempTime; ?></p>
+                    <h2>Data:</h2>
+                    <p><?php echo $displayTempDate; ?></p>
                 </div>
 
                 <!-- Umidade -->
@@ -128,10 +135,14 @@ if (!empty($mensagem_umi)) {
                     <?php
                     $displayUmi = htmlspecialchars($umi_atual_msg);
                     $displayUmiTime = htmlspecialchars($umi_atual_time);
+                    $dateObj = new DateTime($umi_atual_date);
+                    $displayUmiDate = $dateObj->format('d/m/Y');
                     ?>
                     <p><?php echo $displayUmi; ?>%</p>
                     <h2>Horário:</h2>
                     <p><?php echo $displayUmiTime; ?></p>
+                    <h2>Data:</h2>
+                    <p><?php echo $displayUmiDate; ?></p>
                 </div>
 
                 <!-- Iluminação -->
@@ -140,10 +151,14 @@ if (!empty($mensagem_umi)) {
                     <?php
                     $displayIlu = htmlspecialchars($ilu_atual_msg);
                     $displayIluTime = htmlspecialchars($ilu_atual_time);
+                    $dateObj = new DateTime($ilu_atual_date);
+                    $displayIluDate = $dateObj->format('d/m/Y');
                     ?>
                     <p><?php echo $displayIlu; ?></p>
                     <h2>Horário:</h2>
                     <p><?php echo $displayIluTime; ?></p>
+                    <h2>Data:</h2>
+                    <p><?php echo $displayIluDate; ?></p>
                 </div>
             </div>
         </div>
