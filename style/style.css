@@ -221,7 +221,7 @@ main {
     border-style: none;
     border-radius: 30px;
     background-color: #187f4c;
-    width: 50%;
+    width: 20%;
     padding: 0.5%;
     display: flex;
     color: #dddfe3;
@@ -348,7 +348,7 @@ main {
     align-items: center;
     gap: 5px;
     display: flex;
-    margin-top: 5px;
+    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -575,7 +575,7 @@ main {
 
 .temp-dashboard p,
 .umida-dashboard p,
-.lux-dashboard p,
+.lux-dashboard p, 
 .presenca-dashboard p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
