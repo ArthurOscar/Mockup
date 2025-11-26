@@ -82,7 +82,6 @@ if (paginaRotasName === 'index_gestaoderotas.php') {
             document.querySelector('#numero').style.padding = '5px'
             document.getElementById('mapa_ferrovia').style.padding = '5px'
             document.getElementById('mapa_ferrovia').style.width = '100%'
-            document.getElementById('mapa_ferrovia').style.maxWidth = '10rem'
             document.getElementById('mapa_ferrovia').style.height = 'auto'
             seta.src = imgFerrovia2
         } else {

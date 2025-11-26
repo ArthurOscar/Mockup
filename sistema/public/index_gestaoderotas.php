@@ -70,12 +70,13 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
             <div id="ferrovia_Aberto" class="ferrovia_Aberto">
                 <div id="menu_rotas">
                     <div class="rota">
-                        <p id="numero">S1 -> S2</p>
+                        <p id="numero">Trajeto completo</p>
                     </div>
                     <div id="mapaStyle">
-                        <img id="mapa_ferrovia" src="../assects/Mapa.PNG" alt="">
+                        <img id="mapa_ferrovia" src="../assects/circuito.png" alt="Trajeto completo do projeto">
                         <div>
-                            <p>Horário de partida: <u>08:20</u></p>
+                            <p>Sensores na placa <u>S1</u></p>
+                            <p>Atuadores nas demais placas, <u>S2, S3</u> e <u>TREM</u></p>
                         </div>
                     </div>
                 </div>
