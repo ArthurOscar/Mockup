@@ -50,6 +50,7 @@ while (time() - $start < 2) { // escuta 2 segundos
     $mqtt->proc();
 }
 
+var_dump($messages_ilu);
 
 $mqtt->close();
 
