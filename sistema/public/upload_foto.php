@@ -91,6 +91,7 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
             <a href="../public/index_alertas.php">Alertas</a>
             <?php if ($currentUser['funcao'] === 'Admin'): ?>
                 <a href="../public/index_cadastro.php">Cadastro</a>
+                <a href="../public/index_gerenciamento.php">Usuários</a>
             <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>

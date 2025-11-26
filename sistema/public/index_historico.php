@@ -55,6 +55,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
             <a href="../public/index_alertas.php">Alertas</a>
             <?php if ($currentUser['funcao'] === 'Admin'): ?>
                 <a href="../public/index_cadastro.php">Cadastro</a>
+                <a href="../public/index_gerenciamento.php">Usuários</a>
             <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>
@@ -65,7 +66,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
             <p>Histórico</p>
             <form method="GET">
                 <div class="filter-container">
-                    <input type="text" name="filtro" placeholder="Filtrar por sensor..." class="filter-input">
+                    <input type="text" name="filtro" placeholder="Filtrar por sensor ou data" class="filter-input">
                     <button type="submit" class="filter-btn">
                         <img src="../assects/lupa.png" alt="buscar">
                     </button>

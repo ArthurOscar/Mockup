@@ -100,6 +100,7 @@ if (!empty($mensagem_umi)) {
             <a href="../public/index_alertas.php">Alertas</a>
             <?php if ($currentUser['funcao'] === 'Admin'): ?>
                 <a href="../public/index_cadastro.php">Cadastro</a> <!-- Só admin acessa -->
+                <a href="../public/index_gerenciamento.php">Usuários</a>
             <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>
