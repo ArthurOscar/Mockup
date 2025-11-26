@@ -64,9 +64,11 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
         <div class="historico">
             <p>Histórico</p>
             <form method="GET">
-                <div id="pesquisar_completo">
-                    <input type="text" id="pesquisar_rota" placeholder="FILTRAR POR SENSOR E DIA" style="border:1px solid;" name="filtro">
-                    <input type="submit" id="buscar_botao" value="Filtrar">
+                <div class="filter-container">
+                    <input type="text" name="filtro" placeholder="Filtrar por sensor..." class="filter-input">
+                    <button type="submit" class="filter-btn">
+                        <img src="../assects/lupa.png" alt="buscar">
+                    </button>
                 </div>
             </form>
         </div>
@@ -76,6 +78,8 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
             $dados = $list->listarDadosSensor($filtro);
 
             if (!empty($dados)) {
+                echo "<div class='historico-grid'>";
+
                 foreach ($dados as $dado) {
                     $id = htmlspecialchars($dado['id']);
                     $topic = htmlspecialchars($dado['topic']);
@@ -83,16 +87,18 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
                     $date = htmlspecialchars($dado['date']);
                     $time = htmlspecialchars($dado['time']);
 
-                    echo "<div class='tableInfo'>";
+                    echo "<div class='historico-card'>";
                     echo "<p><strong>ID:</strong> {$id}</p>";
                     echo "<p><strong>Topic:</strong> {$topic}</p>";
                     echo "<p><strong>Mensagem:</strong> {$msg}</p>";
                     echo "<p><strong>Data:</strong> {$date} <strong>Hora:</strong> {$time}</p>";
                     echo "</div>";
                 }
+
+                echo "</div>";
             } else {
                 if ($filtro === '') {
-                    echo "<p>Nenhum dado encontrado — a tabela está vazia ou o LIMIT foi atingido.</p>";
+                    echo "<p>Nenhum dado encontrado.</p>";
                 } else {
                     echo "<p>Nenhum dado encontrado para o filtro: <strong>" . htmlspecialchars($filtro) . "</strong>.</p>";
                 }

@@ -59,10 +59,6 @@ $currentUser = $user -> getUserById($_SESSION['user_id']);
     <main>
         <div id="saudacao">
             <p>Rotas</del></p>
-            <div id="pesquisar_completo">
-                <input type="text" id="pesquisar_rota" maxlength="4" placeholder="PESQUISAR ROTAS">
-                <input type="submit" id="buscar_botao" value="Buscar">
-            </div>
         </div>
         <hr>
         <div id="ferrovias">
