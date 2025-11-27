@@ -12,5 +12,5 @@ INSERT INTO Alertas (tipo_alerta, mensagem, id_usuario) VALUES
 
 INSERT INTO Historico_sensores (topic, msg, time) VALUES
 ('s1/iluminacao','0','00:00:00'),
-('s1/temperatura','0','00:00:00'),
-('s1/umidade','null','00:00:00');
+('s1/temperatura','null','00:00:00'),
+('s1/umidade','0','00:00:00');

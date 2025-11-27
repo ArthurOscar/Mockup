@@ -12,6 +12,17 @@ if (!$auth->isLoggedIn()) {
     exit();
 }
 
+$filtro = $_GET['filtro'] ?? '';
+
+if ($filtro === "reset"){
+    $filtro = '';
+    header("location: index_alertas.php");
+}
+
+if($filtro != "comunicados" && $filtro != "alertas"){
+    $filtro = '';
+}
+
 $currentUser = $user->getUserById($_SESSION['user_id']);
 
 ?>
@@ -63,17 +74,26 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
                 <p>Alertas</p>
             </div>
             <div id="abaFiltro">
-                <select name="filtro" id="filtro" required onclick="filtroAbrir()">
-                    <option value="Filtros">Filtros</option>
-                    <option value="naoLidos">Comunicados</option>
-                    <option value="Lidos">Alertas</option>
-                </select>
+                <form method="GET">
+                    <select name="filtro" id="filtro" onchange="this.form.submit()">
+                        <option value="" selected>Filtros</option>
+                        <option value="comunicados">Comunicados</option>
+                        <option value="alertas">Alertas</option>
+                        <option value="reset">Resetar</option>
+                    </select>
+                </form>
             </div>
         </div>
         <hr>
         <?php
         // Mostrando os dados do BD de alertas
-        $sql = "SELECT * FROM alertas";
+        if ($filtro === "comunicados"){
+            $sql = "SELECT * FROM alertas WHERE tipo_alerta = 'Comunicado'";
+        } else if ($filtro === "alertas"){
+            $sql = "SELECT * FROM alertas WHERE tipo_alerta = 'Alerta'";
+        } else {
+            $sql = "SELECT * FROM alertas";
+        }
         $result = $conn->query($sql);
         $alertas = $result->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($alertas)) {
