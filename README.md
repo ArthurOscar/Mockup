@@ -3,7 +3,7 @@
 - Copie todo o schema.sql e cole na caixa de consulta sql no phpmyadmin
 - Logo após, copia e cola o arquivo seed.sql no mesmo lugar
 - Ligue o xampp e execute com localhost no seu navegador
-- Exemplo de URL do navegador: localhost/mockup/public/index.php
+- Exemplo de URL do navegador: localhost/mockup/sistema/public/index.php
 - Realize o login com email: 'admin@email.com' e senha 'senha123'
 
 # API utilizada:
