@@ -397,10 +397,9 @@ main {
 
 .textoAlerta {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin: 0.3rem 1rem;
+    margin: 0.3rem 0.5rem;
     font-size: 1.2rem;
-    text-align: justify;
+    text-align: left;
     line-height: 1.4;
 }
 
@@ -416,7 +415,7 @@ main {
     text-align: center;
     align-content: center;
     border-radius: 20px;
-    color: #dddfe3;
+    color: #ffffff;
 }
 
 .textGreen_alerta {

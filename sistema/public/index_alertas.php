@@ -106,7 +106,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
                 echo "<div>";
                 echo "<p class='textoAlerta'>$mensagem</p>";
                 echo "</div>";
-                echo "<br><hr>";
+                echo "<hr>";
             }
         } else {
             echo 'Nenhum alerta ou comunicado encontrado.';
