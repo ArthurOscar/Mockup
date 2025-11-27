@@ -13,12 +13,11 @@ foto_perfil VARCHAR(255) DEFAULT('default.jpg')
 
 CREATE TABLE Alertas (
 id_alerta INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-tipo_alerta VARCHAR(50),
-mensagem TEXT,
-prioridade VARCHAR(20),
-id_usuario_alerta INT,
-data_envio DATETIME,
-FOREIGN KEY (id_usuario_alerta) REFERENCES Usuarios(id_usuario)
+tipo_alerta ENUM('Comunicado', 'Alerta') NOT NULL,
+mensagem TEXT NOT NULL,
+id_usuario INT NOT NULL,
+data_envio DATETIME DEFAULT(CURRENT_TIMESTAMP) NOT NULL,
+FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
 );
 
 CREATE TABLE Historico_sensores(

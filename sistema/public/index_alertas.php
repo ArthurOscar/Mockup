@@ -71,33 +71,27 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
             </div>
         </div>
         <hr>
-        <div class="textGreen_comunicado">
-            <p>Comunicado</p>
-        </div>
-        <div>
-            <p class="textoAlerta">Informamos que a linha (0101) Sul / Centro, Terá um atraso por conta das
-                manutenções dos trilhos.</p>
-        </div>
-        <br>
-        <hr>
-        <div class="textGreen_comunicado">
-            <p>Comunicado</p>
-        </div>
-        <div>
-            <p class="textoAlerta">Informamos que o trem da linha (0103) está passando por consertos por conta de
-                falhas mecânicas. </p>
-        </div>
-        <br>
-        <hr>
-        <div class="textGreen_alerta">
-            <p>Alerta</p>
-        </div>
-        <div>
-            <p class="textoAlerta">Anunciamos que nossa ferroviária está passando por atualizações de segurança e
-                por isso os serviços serão limitados.</p>
-        </div>
-        <br>
-        <hr>
+        <?php
+        // Mostrando os dados do BD de alertas
+        $sql = "SELECT * FROM alertas";
+        $result = $conn->query($sql);
+        $alertas = $result->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($alertas)) {
+            foreach ($alertas as $row) {
+                $tipo_alerta = htmlspecialchars($row['tipo_alerta']);
+                $mensagem = htmlspecialchars($row['mensagem']);
+                echo "<div class='textGreen_comunicado'>";
+                echo "<p>$tipo_alerta</p>";
+                echo "</div>";
+                echo "<div>";
+                echo "<p class='textoAlerta'>$mensagem</p>";
+                echo "</div>";
+                echo "<br><hr>";
+            }
+        } else {
+            echo 'Nenhum alerta ou comunicado encontrado.';
+        }
+        ?>
     </main>
 </body>
 
