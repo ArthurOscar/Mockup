@@ -63,7 +63,7 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload de foto</title>
-    <link rel="shortcut icon" type="image/ico" href="../assects/foto.png">
+    <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
     <script src="../script/script.js"></script>
 </head>
 

@@ -23,7 +23,7 @@ echo "<link rel='stylesheet' href='../style/style.css'>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <script src="../script/script.js"></script>
-    <link rel="shortcut icon" type="image/ico" href="../assects/perfil.png">
+    <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
 </head>
 
 <body>

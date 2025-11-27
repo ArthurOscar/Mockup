@@ -33,7 +33,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
     <title>Gerenciamento de usuários</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
-    <link rel="shortcut icon" type="image/ico" href="../assects/gerenciamento.png"> <!-- Do utilizador ícones criados por Muhammad_Usman - Flaticon -->
+    <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
 </head>
 <body>
     <nav class="navbar">

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <script src="../script/script.js"></script>
-    <link rel="shortcut icon" type="image/ico" href="../assects/cadastro.png">
+    <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
 </head>
 
 <body>

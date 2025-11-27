@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Login</title>
   <link rel="stylesheet" href="../style/style.css">
   <script src="../script/script.js"></script>
-  <link rel="shortcut icon" type="image/ico" href="../assects/login.jpg">
+  <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
 </head>
 
 <body>

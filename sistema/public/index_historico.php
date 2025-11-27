@@ -28,7 +28,7 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
     <title>Histórico</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
-    <link rel="shortcut icon" type="image/ico" href="../assects/relatorio.png">
+    <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
 </head>
 
 <body>

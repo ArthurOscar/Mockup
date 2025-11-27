@@ -80,7 +80,7 @@ if (!empty($mensagem_umi)) {
     <title>Dashboard</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../script/script.js"></script>
-    <link rel="shortcut icon" type="image/ico" href="../assects/dashboard.png">
+    <link rel="shortcut icon" type="image/ico" href="../assects/tremvida.png">
 </head>
 
 <body>
