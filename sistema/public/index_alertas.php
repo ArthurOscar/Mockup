@@ -14,16 +14,27 @@ if (!$auth->isLoggedIn()) {
 
 $filtro = $_GET['filtro'] ?? '';
 
-if ($filtro === "reset"){
+if ($filtro === "reset") {
     $filtro = '';
     header("location: index_alertas.php");
 }
 
-if($filtro != "comunicados" && $filtro != "alertas"){
+if ($filtro != "comunicados" && $filtro != "alertas") {
     $filtro = '';
 }
 
 $currentUser = $user->getUserById($_SESSION['user_id']);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['excluir'])) {
+        $id = $_POST['id'];
+        if ($user->excluirAlertas($id)) {
+            echo "<script>alert('Sucesso ao remover alerta')</script>";
+        } else {
+            echo "<script>alert('Erro ao remover alerta')</script>";
+        }
+    }
+}
 
 ?>
 
@@ -87,9 +98,9 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
         <hr>
         <?php
         // Mostrando os dados do BD de alertas
-        if ($filtro === "comunicados"){
+        if ($filtro === "comunicados") {
             $sql = "SELECT * FROM alertas WHERE tipo_alerta = 'Comunicado'";
-        } else if ($filtro === "alertas"){
+        } else if ($filtro === "alertas") {
             $sql = "SELECT * FROM alertas WHERE tipo_alerta = 'Alerta'";
         } else {
             $sql = "SELECT * FROM alertas";
@@ -100,13 +111,24 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
             foreach ($alertas as $row) {
                 $tipo_alerta = htmlspecialchars($row['tipo_alerta']);
                 $mensagem = htmlspecialchars($row['mensagem']);
-                echo "<div class='textGreen_comunicado'>";
-                echo "<p>$tipo_alerta</p>";
-                echo "</div>";
-                echo "<div>";
-                echo "<p class='textoAlerta'>$mensagem</p>";
-                echo "</div>";
-                echo "<hr>";
+                $id = htmlspecialchars($row['id_alerta']);
+                $funcao = htmlspecialchars($currentUser['funcao']);
+                echo "<div class='alerta-box'>
+                        <div class='alerta-header'>
+                            <span class='tipo-alerta $tipo_alerta'>$tipo_alerta</span>";
+                // SÓ ADMIN VÊ O BOTÃO
+                if ($funcao === 'Admin') {
+                    echo "<form method='POST' class='form-excluir'>
+                            <input type='hidden' name='id' value='$id'>
+                            <button type='submit' name='excluir' class='btn-excluir'>
+                                <img src='../assects/lixeira.png' alt='Excluir'>
+                            </button>
+                        </form>";
+                }
+                echo "</div>
+                <p class='alerta-msg'>$mensagem</p>
+            </div>
+          <hr>";
             }
         } else {
             echo 'Nenhum alerta ou comunicado encontrado.';

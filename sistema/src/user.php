@@ -44,6 +44,20 @@ class User {
         $stmt -> bindParam(':id', $user_id);
         return $stmt->execute();
     }
+    public function excluirAlertas($id){
+        $sql = "DELETE FROM alertas WHERE id_alerta = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt -> bindParam(':id', $id);
+        return $stmt->execute();
+    }
+    public function adicionarAlertas($user_id, $tipo_alerta, $msg){
+        $sql = "INSERT INTO alertas(tipo_alerta, mensagem, id_usuario) VALUES (:tipo_alerta, :msg, :user_id)";
+        $stmt = $this -> conn -> prepare($sql);
+        $stmt -> bindParam(':tipo_alerta', $tipo_alerta);
+        $stmt -> bindParam(':msg', $msg);
+        $stmt -> bindParam(':user_id', $user_id);
+        return $stmt->execute();
+    }
 }
 
 ?>

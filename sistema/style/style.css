@@ -387,51 +387,6 @@ main {
     justify-content: end;
 }
 
-.flex-Alertas {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2%;
-    flex-wrap: wrap;
-}
-
-.textoAlerta {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0.3rem 0.5rem;
-    font-size: 1.2rem;
-    text-align: left;
-    line-height: 1.4;
-}
-
-.textGreen_comunicado {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 1%;
-    margin-left: 0.3%;
-    font-size: 1.2rem;
-    background-color: #187f4c;
-    height: 40px;
-    width: 140px;
-    text-align: center;
-    align-content: center;
-    border-radius: 20px;
-    color: #ffffff;
-}
-
-.textGreen_alerta {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    margin-top: 1%;
-    margin-left: 0.3%;
-    font-size: 1.2rem;
-    background-color: #187f4c;
-    height: 40px;
-    width: 80px;
-    text-align: center;
-    align-content: center;
-    border-radius: 20px;
-    color: #dddfe3;
-}
 
 /* Histórico */
 .historico {
@@ -596,6 +551,70 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     color: #187f4c;
+}
+
+/* Alerta */
+.flex-Alertas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2%;
+    flex-wrap: wrap;
+}
+
+.alerta-box {
+    margin: 10px 0;
+}
+
+.alerta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tipo-alerta {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1e7e34;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-excluir {
+    margin: 0;
+}
+
+.btn-excluir {
+    background: #e74c3c;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.btn-excluir img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1)
+}
+
+.btn-excluir:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+.alerta-msg {
+    margin: 5px 10px;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Media Queries para Responsividade */
