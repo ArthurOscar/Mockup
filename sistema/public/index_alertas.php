@@ -81,8 +81,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <main>
         <div class="flex-Alertas">
-            <div class="alertas">
+            <div class="alertas" style="display: flex; gap:0.7rem; align-items:center;">
                 <p>Alertas</p>
+                <button class="btn-add">
+                    <img src="../assects/adicionar.png" alt="Adicionar">
+                </button>
             </div>
             <div id="abaFiltro">
                 <form method="GET">

@@ -562,6 +562,8 @@ main {
     flex-wrap: wrap;
 }
 
+
+
 .alerta-box {
     margin: 10px 0;
 }
@@ -617,7 +619,36 @@ main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Media Queries para Responsividade */
+.btn-add {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: 0.2s;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+}
+
+.btn-add img {
+    width: 15px;
+    height: 15px;
+    filter: brightness(0) invert(1);
+}
+
+.btn-add:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.btn-add:active {
+    transform: scale(0.95);
+}
+
 @media (min-width: 768px) {
     .menu_lateral {
         width: 40%;
