@@ -155,3 +155,25 @@ window.addEventListener('resize', function () {
         trocar_menu();
     }
 });
+
+// Abrir modal do alerta
+document.addEventListener("DOMContentLoaded", () => {
+
+    const modal = document.getElementById("modalAdd");
+    const btnAdd = document.querySelector(".btn-add");
+
+    console.log("Modal encontrado:", modal);
+    console.log("Botão encontrado:", btnAdd);
+
+    if (btnAdd && modal) {
+        btnAdd.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+    }
+
+});
+
+function fecharModal() {
+    const modal = document.getElementById("modalAdd");
+    if (modal) modal.style.display = "none";
+}

@@ -26,6 +26,17 @@ if ($filtro != "comunicados" && $filtro != "alertas") {
 $currentUser = $user->getUserById($_SESSION['user_id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['adicionar'])) {
+        $tipo_alerta = $_POST['tipo_alerta'];
+        $mensagem = $_POST['mensagem'];
+        $user_id = $currentUser['id_usuario'];
+
+        if ($user->adicionarAlertas($user_id, $tipo_alerta, $mensagem)) {
+            echo "<script>alert('Alerta adicionado com sucesso!');</script>";
+        } else {
+            echo "<script>alert('Erro ao adicionar alerta');</script>";
+        }
+    }
     if (isset($_POST['excluir'])) {
         $id = $_POST['id'];
         if ($user->excluirAlertas($id)) {
@@ -77,6 +88,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php endif; ?>
             <br><br><br>
             <a href="logout.php">Sair</a>
+        </div>
+    </div>
+    <!-- Modal para adicionar alerta -->
+    <div id="modalAdd" class="modal">
+        <div class="modal-content">
+            <h3>Adicionar Alerta</h3>
+            <form method="POST">
+                <label>Tipo do alerta:</label><br>
+                <select name="tipo_alerta" required>
+                    <option value="Alerta">Alerta</option>
+                    <option value="Comunicado">Comunicado</option>
+                </select><br>
+                <label>Mensagem:</label>
+                <textarea name="mensagem" required></textarea>
+                <button type="submit" name="adicionar" class="btn-salvar">Salvar</button>
+                <button type="button" onclick="fecharModal()" class="btn-cancelar">Cancelar</button>
+            </form>
         </div>
     </div>
     <main>
