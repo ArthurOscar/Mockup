@@ -111,9 +111,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="flex-Alertas">
             <div class="alertas" style="display: flex; gap:0.7rem; align-items:center;">
                 <p>Alertas</p>
+                <?php if ($currentUser['funcao'] === 'Admin'): ?>
                 <button class="btn-add">
                     <img src="../assects/adicionar.png" alt="Adicionar">
                 </button>
+                <?php endif; ?>
             </div>
             <div id="abaFiltro">
                 <form method="GET">
