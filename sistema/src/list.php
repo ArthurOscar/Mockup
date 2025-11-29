@@ -9,6 +9,15 @@ class DataList
         $this->conn = $db;
     }
 
+    public function listarValoresUser($id){
+        $sql = "SELECT * FROM usuarios WHERE id_usuario=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt -> bindParam(":id", $id);
+        $stmt->execute();
+        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $rows ?: [];
+    }
+
     public function listarDadosSensor($filtro)
     {
         // se filtro vazio, traz últimas 200 linhas

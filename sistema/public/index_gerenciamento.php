@@ -97,6 +97,11 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
                     echo "<p><strong>Email:</strong> {$email}</p>";
                     echo "<p><strong>Função:</strong> {$funcao}</p>";
                     echo "<p><strong>Situação:</strong> {$situacao}</p>";
+                    echo "<form method='POST' class='form-editar'>
+                            <a href='index_editarUsuario.php?id={$id}' class='btn-editar'>
+                                <img src='../assects/editar.png' alt='Editar'>
+                            </a>
+                        </form>";
                     echo "</div>";
                 }
 

@@ -562,8 +562,6 @@ main {
     flex-wrap: wrap;
 }
 
-
-
 .alerta-box {
     margin: 10px 0;
 }
@@ -693,6 +691,43 @@ main {
     padding: 10px;
     border-radius: 6px;
     cursor: pointer;
+}
+
+/* Gerenciamento */
+.form-editar {
+    margin: 0;
+}
+
+.btn-editar {
+    background: #000000;
+    border: none;
+    border-radius: 30%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.btn-editar img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1)
+}
+
+.btn-editar:hover {
+    background: #136403;
+    transform: scale(1.1);
+}
+
+/* Editar */
+#voltarGeren{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {
