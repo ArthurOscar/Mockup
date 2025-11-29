@@ -50,7 +50,6 @@ $currentUser = $user->getUserById($_SESSION['user_id']);
         <div id="menu_links">
             <a href="../public/index_dashboard.php">Início</a>
             <a href="../public/index_gestaoderotas.php">Rotas</a>
-            <a href="../public/index_manutencao.php">Manutenção</a>
             <a href="../public/index_historico.php">Histórico</a>
             <a href="../public/index_alertas.php">Alertas</a>
             <?php if ($currentUser['funcao'] === 'Admin'): ?>

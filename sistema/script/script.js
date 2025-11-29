@@ -112,42 +112,6 @@ if (paginaRotasName === 'index_gestaoderotas.php') {
     }
 }
 
-
-/* Manutenção */
-const paginaManutencao = window.location.pathname
-const paginaManutencaoName = paginaManutencao.substring(paginaManutencao.lastIndexOf('/') + 1)
-
-if (paginaManutencaoName === 'index_manutencao.php') {
-    let imgFerrovia1 = "../assects/seta_ferrovia.png"
-    let imgFerrovia2 = "../assects/seta_ferrovia2.png"
-    let ferroviaAberto = false
-
-    function ferrovia() {
-        let menu_rotas = document.getElementById('ferrovia_Aberto')
-        let seta = document.getElementById('seta')
-        if (!ferroviaAberto) {
-            document.getElementById('menu_rotas').style.fontSize = '1rem'
-            document.getElementById('menu_rotas').style.height = 'auto'
-            document.getElementById('menu_rotas').style.justifyContent = 'top'
-            document.querySelector('#numero').style.padding = '5px'
-            seta.src = imgFerrovia2
-        } else {
-            document.getElementById('menu_rotas').style.height = '0px'
-            document.getElementById('menu_rotas').style.fontSize = '0'
-            document.querySelector('#numero').style.padding = '0'
-            seta.src = imgFerrovia1
-        }
-        ferroviaAberto = !ferroviaAberto;
-    }
-    window.onload = () => {
-        ferroviaAberto = false;
-        document.querySelector('#numero').style.padding = '0'
-        document.getElementById('ferrovia_Aberto').style.fontSize = '0'
-        document.getElementById('menu_rotas').style.height = '0px'
-        document.getElementById('seta').src = imgFerrovia1;
-    };
-}
-
 // Redimensionamento da janela
 window.addEventListener('resize', function () {
     // Fechar menu lateral se a tela for redimensionada para um tamanho maior
