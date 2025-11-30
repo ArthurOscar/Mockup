@@ -34,23 +34,21 @@ if (!$mqtt->connect(true, NULL, $username, $password)) {
 
 // Subscribing e coletando mensagens por 2 segundos
 $mqtt->subscribe([$topic_ilu => ["qos" => 0, "function" => function ($topic_ilu, $msg_ilu) use (&$messages_ilu) {
-    $messages_ilu[] = ["topic" => $topic_ilu, "msg" => $msg_ilu, "time" => date("H:i:s")];
+    $messages_ilu[] = ["topic" => $topic_ilu, "msg" => $msg_ilu, "time" => date("H:i:s"), "date" => date("Y-m-d")];
 }]], 0);
 
 $mqtt->subscribe([$topic_temp => ["qos" => 0, "function" => function ($topic_temp, $msg_temp) use (&$messages_temp) {
-    $messages_temp[] = ["topic" => $topic_temp, "msg" => $msg_temp, "time" => date("H:i:s")];
+    $messages_temp[] = ["topic" => $topic_temp, "msg" => $msg_temp, "time" => date("H:i:s"), "date" => date("Y-m-d")];
 }]], 0);
 
 $mqtt->subscribe([$topic_umi => ["qos" => 0, "function" => function ($topic_umi, $msg_umi) use (&$messages_umi) {
-    $messages_umi[] = ["topic" => $topic_umi, "msg" => $msg_umi, "time" => date("H:i:s")];
+    $messages_umi[] = ["topic" => $topic_umi, "msg" => $msg_umi, "time" => date("H:i:s"), "date" => date("Y-m-d")];
 }]], 0);
 
 $start = time();
 while (time() - $start < 2) { // escuta 2 segundos
     $mqtt->proc();
 }
-
-var_dump($messages_ilu);
 
 $mqtt->close();
 

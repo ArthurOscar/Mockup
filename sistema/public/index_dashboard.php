@@ -25,11 +25,10 @@ $mensagem_umi = $_SESSION['resposta_umi'] ?? '';
 if (!empty($mensagem_ilu)) {
     // end() mostra a última mensagem do array
     $ultimaMsgIlu = end($mensagem_ilu);
-    $hoje = date("Y-m-d");
     $broker->saveHist("s1/iluminacao", $ultimaMsgIlu['msg'], $ultimaMsgIlu['time']);
     $ilu_atual_msg = $ultimaMsgIlu['msg'];
     $ilu_atual_time = $ultimaMsgIlu['time'];
-    $ilu_atual_date = $hoje;
+    $ilu_atual_date = $ultimaMsgIlu['date'];
 } else {
     // Busca do banco o último valor salvo
     $ilu_antigo = $broker->dataIlu();
@@ -42,11 +41,10 @@ if (!empty($mensagem_ilu)) {
 if (!empty($mensagem_temp)) {
     // Pega a última mensagem
     $ultimaMsgTemp = end($mensagem_temp);
-    $hoje = date("Y-m-d");
     $broker->saveHist("s1/temperatura", $ultimaMsgTemp['msg'], $ultimaMsgTemp['time']);
     $temp_atual_msg = $ultimaMsgTemp['msg'];
     $temp_atual_time = $ultimaMsgTemp['time'];
-    $temp_atual_date = $hoje;
+    $temp_atual_date = $ultimaMsgTemp['date'];
 } else {
     // Busca no banco o valor salvo
     $temp_antigo = $broker->dataTemp();
@@ -58,11 +56,10 @@ if (!empty($mensagem_temp)) {
 // Umidade
 if (!empty($mensagem_umi)) {
     $ultimaMsgUmi = end($mensagem_umi);
-    $hoje = date("Y-m-d");
     $broker->saveHist("s1/umidade", $ultimaMsgUmi['msg'], $ultimaMsgUmi['time']);
     $umi_atual_msg = $ultimaMsgUmi['msg'];
     $umi_atual_time = $ultimaMsgUmi['time'];
-    $umi_atual_date = $hoje;
+    $umi_atual_date = $ultimaMsgUmi['date'];
 } else {
     $umi_antigo = $broker->dataUmi();
     $umi_atual_msg = $umi_antigo['msg_anterior'] ?? null;
