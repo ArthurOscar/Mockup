@@ -413,6 +413,8 @@ main {
     border-left: 6px solid #187f4c;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .historico-card p {
