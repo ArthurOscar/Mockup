@@ -9,8 +9,20 @@ class User
     {
         $this->conn = $db;
     }
+
+    public function emailExistente($email){
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        return $stmt->rowCount() > 0;
+    }
+
     public function register($nome, $email, $senha, $funcao)
     {
+        if($this->emailExistente($email)){
+            return false;
+        }
         $hash = password_hash($senha, PASSWORD_DEFAULT);
         $sql = "INSERT INTO usuarios (nome, email, senha, funcao) VALUES (:nome, :email, :senha, :funcao)";
         $stmt = $this->conn->prepare($sql);
@@ -23,6 +35,9 @@ class User
 
     public function edit($id, $nome, $email, $senha, $funcao, $situacao)
     {
+        if($this->emailExistente($email)){
+            return false;
+        }
         if ($senha === '') {
             $sql = "UPDATE usuarios SET nome = :nome, email = :email, funcao = :funcao, situacao = :situacao WHERE id_usuario = :id";
             $stmt = $this->conn->prepare($sql);

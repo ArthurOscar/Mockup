@@ -32,8 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
     // Registra o usuário
-    $user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao']);
-    echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = 'index_dashboard.php';</script>";
+    if ($user->register($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['funcao'])) {
+        echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href = 'index_dashboard.php';</script>";
+    } else {
+        echo "<script>alert('Ocorreu um erro ao adicionar o usuário, verifique se o email já está cadastrado!')</script>";
+    }
 }
 
 ?>
