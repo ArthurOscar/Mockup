@@ -36,7 +36,14 @@ class User
     public function edit($id, $nome, $email, $senha, $funcao, $situacao)
     {
         if($this->emailExistente($email)){
-            return false;
+            $sql = "SELECT email FROM usuarios WHERE id_usuario = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt -> bindParam(":id", $id);
+            $stmt -> execute();
+            $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($email != $rows['email']){
+                return false;
+            }
         }
         if ($senha === '') {
             $sql = "UPDATE usuarios SET nome = :nome, email = :email, funcao = :funcao, situacao = :situacao WHERE id_usuario = :id";
